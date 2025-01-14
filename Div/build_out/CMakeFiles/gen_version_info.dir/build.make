@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for gen_version_info.
 
@@ -67,7 +67,7 @@ include CMakeFiles/gen_version_info.dir/compiler_depend.make
 include CMakeFiles/gen_version_info.dir/progress.make
 
 CMakeFiles/gen_version_info:
-	bash /root/ascend_op/Div/cmake/util/gen_version_info.sh /usr/local/Ascend/ascend-toolkit/latest /root/ascend_op/Div/build_out
+	bash /root/ascend_op/op/Div/cmake/util/gen_version_info.sh /usr/local/Ascend/ascend-toolkit/latest /root/ascend_op/op/Div/build_out
 
 gen_version_info: CMakeFiles/gen_version_info
 gen_version_info: CMakeFiles/gen_version_info.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/gen_version_info.dir/clean:
 .PHONY : CMakeFiles/gen_version_info.dir/clean
 
 CMakeFiles/gen_version_info.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/CMakeFiles/gen_version_info.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/CMakeFiles/gen_version_info.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gen_version_info.dir/depend
 

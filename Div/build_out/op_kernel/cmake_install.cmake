@@ -1,8 +1,8 @@
-# Install script for directory: /root/ascend_op/Div/op_kernel
+# Install script for directory: /root/ascend_op/op/Div/op_kernel
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/ascend_op/Div/build_out")
+  set(CMAKE_INSTALL_PREFIX "/root/ascend_op/op/Div/build_out")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,66 +43,66 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/config/ascend310b" TYPE FILE FILES "/root/ascend_op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/config/ascend310b" TYPE FILE FILES "/root/ascend_op/op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/customize_impl" TYPE DIRECTORY FILES "/root/ascend_op/Div/build_out/op_kernel/tbe/dynamic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/customize_impl" TYPE DIRECTORY FILES "/root/ascend_op/op/Div/build_out/op_kernel/tbe/dynamic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/kernel/ascend310b" TYPE DIRECTORY OPTIONAL FILES "/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin/div")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/kernel/ascend310b" TYPE DIRECTORY OPTIONAL FILES "/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin/div")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin/div.json")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin/div.json")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin/binary_info_config.json")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin/binary_info_config.json")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ascend_op/Div/op_kernel/../build_out/kernel/ascend310b/div")
+   "/root/ascend_op/op/Div/op_kernel/../build_out/kernel/ascend310b/div")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/root/ascend_op/Div/op_kernel/../build_out/kernel/ascend310b" TYPE DIRECTORY OPTIONAL FILES "/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin/div")
+  file(INSTALL DESTINATION "/root/ascend_op/op/Div/op_kernel/../build_out/kernel/ascend310b" TYPE DIRECTORY OPTIONAL FILES "/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin/div")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ascend_op/Div/op_kernel/../build_out/kernel/config/ascend310b/binary_info_config.json")
+   "/root/ascend_op/op/Div/op_kernel/../build_out/kernel/config/ascend310b/binary_info_config.json")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/root/ascend_op/Div/op_kernel/../build_out/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin/binary_info_config.json")
+  file(INSTALL DESTINATION "/root/ascend_op/op/Div/op_kernel/../build_out/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin/binary_info_config.json")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ascend_op/Div/op_kernel/../build_out/kernel/config/ascend310b/div.json")
+   "/root/ascend_op/op/Div/op_kernel/../build_out/kernel/config/ascend310b/div.json")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/root/ascend_op/Div/op_kernel/../build_out/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin/div.json")
+  file(INSTALL DESTINATION "/root/ascend_op/op/Div/op_kernel/../build_out/kernel/config/ascend310b" TYPE FILE OPTIONAL FILES "/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin/div.json")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/framework/tensorflow" TYPE FILE FILES "/root/ascend_op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/npu_supported_ops.json")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/framework/tensorflow" TYPE FILE FILES "/root/ascend_op/op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/npu_supported_ops.json")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/customize_impl/dynamic" TYPE FILE FILES "/root/ascend_op/Div/op_kernel/div.cpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize/op_impl/ai_core/tbe/customize_impl/dynamic" TYPE FILE FILES "/root/ascend_op/op/Div/op_kernel/div.cpp")
 endif()
 

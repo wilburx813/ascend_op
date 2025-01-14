@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for modify_vendor.
 
@@ -70,10 +70,10 @@ CMakeFiles/modify_vendor: scripts/install.sh
 CMakeFiles/modify_vendor: scripts/upgrade.sh
 
 scripts/install.sh:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating scripts/install.sh, scripts/upgrade.sh"
-	mkdir -p /root/ascend_op/Div/build_out/scripts
-	cp -r /root/ascend_op/Div/scripts/* /root/ascend_op/Div/build_out/scripts/
-	sed -i s/vendor_name=customize/vendor_name=customize/g /root/ascend_op/Div/build_out/scripts/*
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating scripts/install.sh, scripts/upgrade.sh"
+	mkdir -p /root/ascend_op/op/Div/build_out/scripts
+	cp -r /root/ascend_op/op/Div/scripts/* /root/ascend_op/op/Div/build_out/scripts/
+	sed -i s/vendor_name=customize/vendor_name=customize/g /root/ascend_op/op/Div/build_out/scripts/*
 
 scripts/upgrade.sh: scripts/install.sh
 	@$(CMAKE_COMMAND) -E touch_nocreate scripts/upgrade.sh
@@ -93,6 +93,6 @@ CMakeFiles/modify_vendor.dir/clean:
 .PHONY : CMakeFiles/modify_vendor.dir/clean
 
 CMakeFiles/modify_vendor.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/CMakeFiles/modify_vendor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/CMakeFiles/modify_vendor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/modify_vendor.dir/depend
 

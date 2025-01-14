@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/ascend_op/Div/framework/tf_plugin/tensorflow_div_plugin.cc" "framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o" "gcc" "framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o.d"
+  "/root/ascend_op/op/Div/framework/tf_plugin/tensorflow_div_plugin.cc" "framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o" "gcc" "framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o.d"
   )
 
 # Targets to which this target links.

@@ -1,5 +1,5 @@
 op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o: \
- /root/ascend_op/Div/build_out/autogen/aclnn_div.cpp \
+ /root/ascend_op/op/Div/build_out/autogen/aclnn_div.cpp \
  /usr/include/stdc-predef.h /usr/include/string.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -121,7 +121,7 @@ op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /root/ascend_op/Div/build_out/autogen/aclnn_div.h \
+ /root/ascend_op/op/Div/build_out/autogen/aclnn_div.h \
  /usr/local/Ascend/ascend-toolkit/latest/include/aclnn/acl_meta.h \
  /usr/include/c++/11/cstdint /usr/include/c++/11/cstdlib \
  /usr/include/stdlib.h /usr/include/aarch64-linux-gnu/bits/waitflags.h \

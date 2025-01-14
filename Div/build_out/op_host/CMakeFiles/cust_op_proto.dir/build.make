@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Include any dependencies generated for this target.
 include op_host/CMakeFiles/cust_op_proto.dir/depend.make
@@ -72,30 +72,30 @@ include op_host/CMakeFiles/cust_op_proto.dir/flags.make
 op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o: op_host/CMakeFiles/cust_op_proto.dir/flags.make
 op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o: ../op_host/div.cpp
 op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o: op_host/CMakeFiles/cust_op_proto.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o"
-	cd /root/ascend_op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o -MF CMakeFiles/cust_op_proto.dir/div.cpp.o.d -o CMakeFiles/cust_op_proto.dir/div.cpp.o -c /root/ascend_op/Div/op_host/div.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o"
+	cd /root/ascend_op/op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o -MF CMakeFiles/cust_op_proto.dir/div.cpp.o.d -o CMakeFiles/cust_op_proto.dir/div.cpp.o -c /root/ascend_op/op/Div/op_host/div.cpp
 
 op_host/CMakeFiles/cust_op_proto.dir/div.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cust_op_proto.dir/div.cpp.i"
-	cd /root/ascend_op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ascend_op/Div/op_host/div.cpp > CMakeFiles/cust_op_proto.dir/div.cpp.i
+	cd /root/ascend_op/op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ascend_op/op/Div/op_host/div.cpp > CMakeFiles/cust_op_proto.dir/div.cpp.i
 
 op_host/CMakeFiles/cust_op_proto.dir/div.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cust_op_proto.dir/div.cpp.s"
-	cd /root/ascend_op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ascend_op/Div/op_host/div.cpp -o CMakeFiles/cust_op_proto.dir/div.cpp.s
+	cd /root/ascend_op/op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ascend_op/op/Div/op_host/div.cpp -o CMakeFiles/cust_op_proto.dir/div.cpp.s
 
 op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o: op_host/CMakeFiles/cust_op_proto.dir/flags.make
 op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o: autogen/op_proto.cc
 op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o: op_host/CMakeFiles/cust_op_proto.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o"
-	cd /root/ascend_op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o -MF CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o.d -o CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o -c /root/ascend_op/Div/build_out/autogen/op_proto.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o"
+	cd /root/ascend_op/op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o -MF CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o.d -o CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o -c /root/ascend_op/op/Div/build_out/autogen/op_proto.cc
 
 op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.i"
-	cd /root/ascend_op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ascend_op/Div/build_out/autogen/op_proto.cc > CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.i
+	cd /root/ascend_op/op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ascend_op/op/Div/build_out/autogen/op_proto.cc > CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.i
 
 op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.s"
-	cd /root/ascend_op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ascend_op/Div/build_out/autogen/op_proto.cc -o CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.s
+	cd /root/ascend_op/op/Div/build_out/op_host && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ascend_op/op/Div/build_out/autogen/op_proto.cc -o CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.s
 
 # Object files for target cust_op_proto
 cust_op_proto_OBJECTS = \
@@ -109,18 +109,18 @@ op_host/libcust_opsproto_rt2.0.so: op_host/CMakeFiles/cust_op_proto.dir/div.cpp.
 op_host/libcust_opsproto_rt2.0.so: op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o
 op_host/libcust_opsproto_rt2.0.so: op_host/CMakeFiles/cust_op_proto.dir/build.make
 op_host/libcust_opsproto_rt2.0.so: op_host/CMakeFiles/cust_op_proto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libcust_opsproto_rt2.0.so"
-	cd /root/ascend_op/Div/build_out/op_host && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cust_op_proto.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libcust_opsproto_rt2.0.so"
+	cd /root/ascend_op/op/Div/build_out/op_host && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cust_op_proto.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 op_host/CMakeFiles/cust_op_proto.dir/build: op_host/libcust_opsproto_rt2.0.so
 .PHONY : op_host/CMakeFiles/cust_op_proto.dir/build
 
 op_host/CMakeFiles/cust_op_proto.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_host && $(CMAKE_COMMAND) -P CMakeFiles/cust_op_proto.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_host && $(CMAKE_COMMAND) -P CMakeFiles/cust_op_proto.dir/cmake_clean.cmake
 .PHONY : op_host/CMakeFiles/cust_op_proto.dir/clean
 
 op_host/CMakeFiles/cust_op_proto.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_host /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_host /root/ascend_op/Div/build_out/op_host/CMakeFiles/cust_op_proto.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_host /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_host /root/ascend_op/op/Div/build_out/op_host/CMakeFiles/cust_op_proto.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_host/CMakeFiles/cust_op_proto.dir/depend
 

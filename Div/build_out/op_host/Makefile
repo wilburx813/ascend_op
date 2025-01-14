@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /root/ascend_op/Div/build_out && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /root/ascend_op/op/Div/build_out && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /root/ascend_op/Div/build_out && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/ascend_op/Div/build_out/CPackSourceConfig.cmake
+	cd /root/ascend_op/op/Div/build_out && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/ascend_op/op/Div/build_out/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/Div/build_out/CMakeFiles /root/ascend_op/Div/build_out/op_host//CMakeFiles/progress.marks
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/Div/build_out/CMakeFiles 0
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/op/Div/build_out/CMakeFiles /root/ascend_op/op/Div/build_out/op_host//CMakeFiles/progress.marks
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/op/Div/build_out/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/clean
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,22 +168,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/preinstall
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/preinstall
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 op_host/CMakeFiles/cust_op_proto.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/cust_op_proto.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/cust_op_proto.dir/rule
 .PHONY : op_host/CMakeFiles/cust_op_proto.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ cust_op_proto: op_host/CMakeFiles/cust_op_proto.dir/rule
 
 # fast build rule for target.
 cust_op_proto/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/build
 .PHONY : cust_op_proto/fast
 
 # Convenience name for target.
 op_host/CMakeFiles/cust_optiling.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/cust_optiling.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/cust_optiling.dir/rule
 .PHONY : op_host/CMakeFiles/cust_optiling.dir/rule
 
 # Convenience name for target.
@@ -206,12 +206,12 @@ cust_optiling: op_host/CMakeFiles/cust_optiling.dir/rule
 
 # fast build rule for target.
 cust_optiling/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/build
 .PHONY : cust_optiling/fast
 
 # Convenience name for target.
 op_host/CMakeFiles/cust_opapi.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/cust_opapi.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/cust_opapi.dir/rule
 .PHONY : op_host/CMakeFiles/cust_opapi.dir/rule
 
 # Convenience name for target.
@@ -220,12 +220,12 @@ cust_opapi: op_host/CMakeFiles/cust_opapi.dir/rule
 
 # fast build rule for target.
 cust_opapi/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/build
 .PHONY : cust_opapi/fast
 
 # Convenience name for target.
 op_host/CMakeFiles/optiling_compat.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/optiling_compat.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_host/CMakeFiles/optiling_compat.dir/rule
 .PHONY : op_host/CMakeFiles/optiling_compat.dir/rule
 
 # Convenience name for target.
@@ -234,7 +234,7 @@ optiling_compat: op_host/CMakeFiles/optiling_compat.dir/rule
 
 # fast build rule for target.
 optiling_compat/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/optiling_compat.dir/build.make op_host/CMakeFiles/optiling_compat.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/optiling_compat.dir/build.make op_host/CMakeFiles/optiling_compat.dir/build
 .PHONY : optiling_compat/fast
 
 __/autogen/aclnn_div.o: __/autogen/aclnn_div.cpp.o
@@ -242,7 +242,7 @@ __/autogen/aclnn_div.o: __/autogen/aclnn_div.cpp.o
 
 # target to build an object file
 __/autogen/aclnn_div.cpp.o:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o
 .PHONY : __/autogen/aclnn_div.cpp.o
 
 __/autogen/aclnn_div.i: __/autogen/aclnn_div.cpp.i
@@ -250,7 +250,7 @@ __/autogen/aclnn_div.i: __/autogen/aclnn_div.cpp.i
 
 # target to preprocess a source file
 __/autogen/aclnn_div.cpp.i:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.i
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.i
 .PHONY : __/autogen/aclnn_div.cpp.i
 
 __/autogen/aclnn_div.s: __/autogen/aclnn_div.cpp.s
@@ -258,7 +258,7 @@ __/autogen/aclnn_div.s: __/autogen/aclnn_div.cpp.s
 
 # target to generate assembly for a file
 __/autogen/aclnn_div.cpp.s:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.s
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_opapi.dir/build.make op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.s
 .PHONY : __/autogen/aclnn_div.cpp.s
 
 __/autogen/op_proto.o: __/autogen/op_proto.cc.o
@@ -266,7 +266,7 @@ __/autogen/op_proto.o: __/autogen/op_proto.cc.o
 
 # target to build an object file
 __/autogen/op_proto.cc.o:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o
 .PHONY : __/autogen/op_proto.cc.o
 
 __/autogen/op_proto.i: __/autogen/op_proto.cc.i
@@ -274,7 +274,7 @@ __/autogen/op_proto.i: __/autogen/op_proto.cc.i
 
 # target to preprocess a source file
 __/autogen/op_proto.cc.i:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.i
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.i
 .PHONY : __/autogen/op_proto.cc.i
 
 __/autogen/op_proto.s: __/autogen/op_proto.cc.s
@@ -282,7 +282,7 @@ __/autogen/op_proto.s: __/autogen/op_proto.cc.s
 
 # target to generate assembly for a file
 __/autogen/op_proto.cc.s:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.s
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.s
 .PHONY : __/autogen/op_proto.cc.s
 
 div.o: div.cpp.o
@@ -290,8 +290,8 @@ div.o: div.cpp.o
 
 # target to build an object file
 div.cpp.o:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/div.cpp.o
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/div.cpp.o
 .PHONY : div.cpp.o
 
 div.i: div.cpp.i
@@ -299,8 +299,8 @@ div.i: div.cpp.i
 
 # target to preprocess a source file
 div.cpp.i:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/div.cpp.i
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/div.cpp.i
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/div.cpp.i
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/div.cpp.i
 .PHONY : div.cpp.i
 
 div.s: div.cpp.s
@@ -308,8 +308,8 @@ div.s: div.cpp.s
 
 # target to generate assembly for a file
 div.cpp.s:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/div.cpp.s
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/div.cpp.s
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_op_proto.dir/build.make op_host/CMakeFiles/cust_op_proto.dir/div.cpp.s
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_host/CMakeFiles/cust_optiling.dir/build.make op_host/CMakeFiles/cust_optiling.dir/div.cpp.s
 .PHONY : div.cpp.s
 
 # Help Target
@@ -350,6 +350,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

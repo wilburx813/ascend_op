@@ -1,8 +1,8 @@
-# Install script for directory: /root/ascend_op/Div
+# Install script for directory: /root/ascend_op/op/Div
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/ascend_op/Div/build_out")
+  set(CMAKE_INSTALL_PREFIX "/root/ascend_op/op/Div/build_out")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,29 +44,29 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/root/ascend_op/Div/build_out/framework/cmake_install.cmake")
+  include("/root/ascend_op/op/Div/build_out/framework/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/root/ascend_op/Div/build_out/op_host/cmake_install.cmake")
+  include("/root/ascend_op/op/Div/build_out/op_host/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/root/ascend_op/Div/build_out/op_kernel/cmake_install.cmake")
+  include("/root/ascend_op/op/Div/build_out/op_kernel/cmake_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY PERMISSIONS OWNER_EXECUTE OWNER_READ GROUP_READ FILES "/root/ascend_op/Div/build_out/scripts/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY PERMISSIONS OWNER_EXECUTE OWNER_READ GROUP_READ FILES "/root/ascend_op/op/Div/build_out/scripts/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages" TYPE FILE OPTIONAL FILES "/root/ascend_op/Div/custom.proto")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages" TYPE FILE OPTIONAL FILES "/root/ascend_op/op/Div/custom.proto")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize" TYPE FILE FILES "/root/ascend_op/Div/build_out/version.info")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/packages/vendors/customize" TYPE FILE FILES "/root/ascend_op/op/Div/build_out/version.info")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -77,5 +77,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/ascend_op/Div/build_out/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/ascend_op/op/Div/build_out/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

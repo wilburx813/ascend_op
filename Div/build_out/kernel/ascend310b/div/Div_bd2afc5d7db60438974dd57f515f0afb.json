@@ -14,7 +14,7 @@
   null,
   null
  ],
- "sha256": "9d0502bef462e5f8f20616f40b272f93642f2f19a3a1c895c48fa76444af2478",
+ "sha256": "58c45bf156fddfb3e9cefe42ddcf93f75d54ac4912c0713c7bc181998e897a50",
  "workspace": {
   "num": 1,
   "size": [
@@ -30,8 +30,6 @@
   }
  ],
  "optionalInputMode": "gen_placeholder",
- "debugOptions": "printf",
- "debugBufSize": 78643200,
  "compileInfo": {},
  "supportInfo": {
   "implMode": "high_performance",

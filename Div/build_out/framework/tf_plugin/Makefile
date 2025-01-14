@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /root/ascend_op/Div/build_out && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /root/ascend_op/op/Div/build_out && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /root/ascend_op/Div/build_out && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/ascend_op/Div/build_out/CPackSourceConfig.cmake
+	cd /root/ascend_op/op/Div/build_out && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/ascend_op/op/Div/build_out/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/Div/build_out/CMakeFiles /root/ascend_op/Div/build_out/framework/tf_plugin//CMakeFiles/progress.marks
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/Div/build_out/CMakeFiles 0
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/op/Div/build_out/CMakeFiles /root/ascend_op/op/Div/build_out/framework/tf_plugin//CMakeFiles/progress.marks
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/op/Div/build_out/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/clean
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,22 +168,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/preinstall
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/preinstall
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/rule
 .PHONY : framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/rule
 
 # Convenience name for target.
@@ -192,7 +192,7 @@ cust_tf_parsers: framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/rule
 
 # fast build rule for target.
 cust_tf_parsers/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build
 .PHONY : cust_tf_parsers/fast
 
 tensorflow_div_plugin.o: tensorflow_div_plugin.cc.o
@@ -200,7 +200,7 @@ tensorflow_div_plugin.o: tensorflow_div_plugin.cc.o
 
 # target to build an object file
 tensorflow_div_plugin.cc.o:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o
 .PHONY : tensorflow_div_plugin.cc.o
 
 tensorflow_div_plugin.i: tensorflow_div_plugin.cc.i
@@ -208,7 +208,7 @@ tensorflow_div_plugin.i: tensorflow_div_plugin.cc.i
 
 # target to preprocess a source file
 tensorflow_div_plugin.cc.i:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.i
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.i
 .PHONY : tensorflow_div_plugin.cc.i
 
 tensorflow_div_plugin.s: tensorflow_div_plugin.cc.s
@@ -216,7 +216,7 @@ tensorflow_div_plugin.s: tensorflow_div_plugin.cc.s
 
 # target to generate assembly for a file
 tensorflow_div_plugin.cc.s:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.s
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.s
 .PHONY : tensorflow_div_plugin.cc.s
 
 # Help Target
@@ -248,6 +248,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

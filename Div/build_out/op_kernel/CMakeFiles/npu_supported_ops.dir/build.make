@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for npu_supported_ops.
 
@@ -69,9 +69,9 @@ include op_kernel/CMakeFiles/npu_supported_ops.dir/progress.make
 op_kernel/CMakeFiles/npu_supported_ops: op_kernel/tbe/op_info_cfg/ai_core/npu_supported_ops.json
 
 op_kernel/tbe/op_info_cfg/ai_core/npu_supported_ops.json:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tbe/op_info_cfg/ai_core/npu_supported_ops.json"
-	cd /root/ascend_op/Div/build_out/op_kernel && mkdir -p /root/ascend_op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core
-	cd /root/ascend_op/Div/build_out/op_kernel && ../../cmake/util/gen_ops_filter.sh /root/ascend_op/Div/build_out/autogen /root/ascend_op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tbe/op_info_cfg/ai_core/npu_supported_ops.json"
+	cd /root/ascend_op/op/Div/build_out/op_kernel && mkdir -p /root/ascend_op/op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core
+	cd /root/ascend_op/op/Div/build_out/op_kernel && ../../cmake/util/gen_ops_filter.sh /root/ascend_op/op/Div/build_out/autogen /root/ascend_op/op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core
 
 npu_supported_ops: op_kernel/CMakeFiles/npu_supported_ops
 npu_supported_ops: op_kernel/tbe/op_info_cfg/ai_core/npu_supported_ops.json
@@ -83,10 +83,10 @@ op_kernel/CMakeFiles/npu_supported_ops.dir/build: npu_supported_ops
 .PHONY : op_kernel/CMakeFiles/npu_supported_ops.dir/build
 
 op_kernel/CMakeFiles/npu_supported_ops.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/npu_supported_ops.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/npu_supported_ops.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/npu_supported_ops.dir/clean
 
 op_kernel/CMakeFiles/npu_supported_ops.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/npu_supported_ops.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/npu_supported_ops.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/npu_supported_ops.dir/depend
 

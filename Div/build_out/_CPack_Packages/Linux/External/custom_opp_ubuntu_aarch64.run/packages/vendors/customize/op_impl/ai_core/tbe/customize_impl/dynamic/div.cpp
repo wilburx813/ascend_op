@@ -11,7 +11,7 @@ public:
         this->tileNum = tileNum;
         this->tileLength = tileLength;
         this->tileLastLength = tileLastLength;
-        AscendC::printf("[Init] blockLength = %u, tileNum = %u, tileLength = %u,tileLastLength = %u\n", blockLength, tileNum, tileLength,tileLastLength);
+        // AscendC::printf("[Init] blockLength = %u, tileNum = %u, tileLength = %u,tileLastLength = %u\n", blockLength, tileNum, tileLength,tileLastLength);
         xGm.SetGlobalBuffer((__gm__ DTYPE_X1 *)x1 , this->blockLength / sizeof(DTYPE_X1));
         yGm.SetGlobalBuffer((__gm__ DTYPE_X2 *)x2 , this->blockLength / sizeof(DTYPE_X1));
         zGm.SetGlobalBuffer((__gm__ DTYPE_Y *)y , this->blockLength / sizeof(DTYPE_X1));
@@ -20,6 +20,12 @@ public:
         pipe.InitBuffer(inQueueX2, BUFFER_NUM, this->tileLength);
         pipe.InitBuffer(outQueueY, BUFFER_NUM, this->tileLength);
         if constexpr (std::is_same_v<DTYPE_X1, int8_t>) {
+            pipe.InitBuffer(tmp1, this->tileLength * 2); // int8 ->half
+            pipe.InitBuffer(tmp2, this->tileLength * 2);
+        }else if constexpr(std::is_same_v<DTYPE_X1, int32_t>){
+            pipe.InitBuffer(tmp1, this->tileLength); // int32 ->flaot32
+            pipe.InitBuffer(tmp2, this->tileLength);
+        }
         // 打印调试信息
         // AscendC::printf("[Init] blockLength = %u, tileNum = %u, tileLength = %u\n", blockLength, tileNum, tileLength);
         // AscendC::printf("[Init] BlockIdx = %u, BlockNum = %u\n", AscendC::GetBlockIdx(), AscendC::GetBlockNum());
@@ -63,8 +69,46 @@ private:
         AscendC::LocalTensor<DTYPE_X1> x1Local = inQueueX1.DeQue<DTYPE_X1>();
         AscendC::LocalTensor<DTYPE_X2> x2Local = inQueueX2.DeQue<DTYPE_X2>();
         AscendC::LocalTensor<DTYPE_Y> yLocal = outQueueY.AllocTensor<DTYPE_Y>();
+        // if constexpr (std::is_same_v<DTYPE_X1, int8_t>) {
+        //     auto p1 = tmp1.Get<half>();
+        //     auto p2 = tmp2.Get<half>();
+        //     AscendC::Cast(p1, x1Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Cast(p2, x2Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Div(p2, p1, p2, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Cast(p1.ReinterpretCast<int16_t>(), p2, AscendC::RoundMode::CAST_RINT, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::ShiftLeft(p1.ReinterpretCast<int16_t>(), p1.ReinterpretCast<int16_t>(), int16_t(8), this->tileLength/sizeof(DTYPE_X1)); 
+        //     AscendC::ShiftRight(p1.ReinterpretCast<int16_t>(), p1.ReinterpretCast<int16_t>(), int16_t(8), this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Cast(p2, p1.ReinterpretCast<int16_t>(), AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Cast(yLocal, p2, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        // }else if constexpr(std::is_same_v<DTYPE_X1, int32_t>){
+        //     auto p1 = tmp1.Get<float>();
+        //     auto p2 = tmp2.Get<float>();
+        //     AscendC::Cast(p1, x1Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Cast(p2, x2Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Div(p2, p1, p2, this->tileLength/sizeof(DTYPE_X1));
+        //     AscendC::Cast(yLocal, p2, AscendC::RoundMode::CAST_FLOOR, this->tileLength/sizeof(DTYPE_X1));
 
-        AscendC::Div(yLocal, x1Local, x2Local, this->tileLength/sizeof(DTYPE_X1));
+        // }else{
+        //     AscendC::Div(yLocal, x1Local, x2Local, this->tileLength/sizeof(DTYPE_X1));
+        // }
+        if constexpr (std::is_same_v<DTYPE_X1, int8_t>) {
+            auto p1 = tmp1.Get<half>();
+            auto p2 = tmp2.Get<half>();
+            AscendC::Cast(p1, x1Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+            AscendC::Cast(p2, x2Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+            AscendC::Div(p2, p1, p2, this->tileLength/sizeof(DTYPE_X1));
+            AscendC::Cast(yLocal, p2, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+        }else if constexpr(std::is_same_v<DTYPE_X1, int32_t>){
+            auto p1 = tmp1.Get<float>();
+            auto p2 = tmp2.Get<float>();
+            AscendC::Cast(p1, x1Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+            AscendC::Cast(p2, x2Local, AscendC::RoundMode::CAST_NONE, this->tileLength/sizeof(DTYPE_X1));
+            AscendC::Div(p2, p1, p2, this->tileLength/sizeof(DTYPE_X1));
+            AscendC::Cast(yLocal, p2, AscendC::RoundMode::CAST_FLOOR, this->tileLength/sizeof(DTYPE_X1));
+
+        }else{
+            AscendC::Div(yLocal, x1Local, x2Local, this->tileLength/sizeof(DTYPE_X1));
+        }
 
         outQueueY.EnQue<DTYPE_Y>(yLocal);
         inQueueX1.FreeTensor(x1Local);
@@ -92,6 +136,7 @@ private:
     AscendC::TPipe pipe;
     AscendC::TQue<AscendC::QuePosition::VECIN, BUFFER_NUM> inQueueX1, inQueueX2;
     AscendC::TQue<AscendC::QuePosition::VECOUT, BUFFER_NUM> outQueueY;
+    AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp1, tmp2;
     AscendC::GlobalTensor<DTYPE_X1> xGm;
     AscendC::GlobalTensor<DTYPE_X2> yGm;
     AscendC::GlobalTensor<DTYPE_Y> zGm;

@@ -1,5 +1,5 @@
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o: \
- /root/ascend_op/Div/framework/tf_plugin/tensorflow_div_plugin.cc \
+ /root/ascend_op/op/Div/framework/tf_plugin/tensorflow_div_plugin.cc \
  /usr/include/stdc-predef.h \
  /usr/local/Ascend/ascend-toolkit/latest/include/register/register.h \
  /usr/include/c++/11/functional \

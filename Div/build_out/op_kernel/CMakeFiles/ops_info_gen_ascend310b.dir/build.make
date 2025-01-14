@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for ops_info_gen_ascend310b.
 
@@ -69,9 +69,9 @@ include op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/progress.make
 op_kernel/CMakeFiles/ops_info_gen_ascend310b: op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json
 
 op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json"
-	cd /root/ascend_op/Div/build_out/op_kernel && mkdir -p /root/ascend_op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/ascend310b
-	cd /root/ascend_op/Div/build_out/op_kernel && python3 /root/ascend_op/Div/cmake/util/parse_ini_to_json.py /root/ascend_op/Div/build_out/autogen/aic-ascend310b-ops-info.ini /root/ascend_op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json"
+	cd /root/ascend_op/op/Div/build_out/op_kernel && mkdir -p /root/ascend_op/op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/ascend310b
+	cd /root/ascend_op/op/Div/build_out/op_kernel && python3 /root/ascend_op/op/Div/cmake/util/parse_ini_to_json.py /root/ascend_op/op/Div/build_out/autogen/aic-ascend310b-ops-info.ini /root/ascend_op/op/Div/build_out/op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json
 
 ops_info_gen_ascend310b: op_kernel/CMakeFiles/ops_info_gen_ascend310b
 ops_info_gen_ascend310b: op_kernel/tbe/op_info_cfg/ai_core/ascend310b/aic-ascend310b-ops-info.json
@@ -83,10 +83,10 @@ op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/build: ops_info_gen_ascend310b
 .PHONY : op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/build
 
 op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ops_info_gen_ascend310b.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ops_info_gen_ascend310b.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/clean
 
 op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/depend
 

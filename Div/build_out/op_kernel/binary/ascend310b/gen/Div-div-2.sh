@@ -17,7 +17,7 @@ while true; do
       ;;
   esac
 done
-res=$(opc $1 --main_func=div --input_param=/root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/gen/Div_5d675fdef4e6f912477a76a9f65a3ab0_param.json --soc_version=Ascend310B1                 --output=$2 --impl_mode=high_performance,optional --simplified_key_mode=0 --op_mode=dynamic )
+res=$(opc $1 --main_func=div --input_param=/root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/gen/Div_5d675fdef4e6f912477a76a9f65a3ab0_param.json --soc_version=Ascend310B1                 --output=$2 --impl_mode=high_performance,optional --simplified_key_mode=0 --op_mode=dynamic )
 
 echo "${res}"
 

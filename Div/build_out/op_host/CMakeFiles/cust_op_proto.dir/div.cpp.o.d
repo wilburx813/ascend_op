@@ -1,6 +1,6 @@
 op_host/CMakeFiles/cust_op_proto.dir/div.cpp.o: \
- /root/ascend_op/Div/op_host/div.cpp /usr/include/stdc-predef.h \
- /root/ascend_op/Div/op_host/div_tiling.h \
+ /root/ascend_op/op/Div/op_host/div.cpp /usr/include/stdc-predef.h \
+ /root/ascend_op/op/Div/op_host/div_tiling.h \
  /usr/local/Ascend/ascend-toolkit/latest/include/register/tilingdata_base.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \

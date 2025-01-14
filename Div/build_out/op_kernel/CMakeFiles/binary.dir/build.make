@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for binary.
 
@@ -74,10 +74,10 @@ op_kernel/CMakeFiles/binary.dir/build: binary
 .PHONY : op_kernel/CMakeFiles/binary.dir/build
 
 op_kernel/CMakeFiles/binary.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/binary.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/binary.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/binary.dir/clean
 
 op_kernel/CMakeFiles/binary.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/binary.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/binary.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/binary.dir/depend
 

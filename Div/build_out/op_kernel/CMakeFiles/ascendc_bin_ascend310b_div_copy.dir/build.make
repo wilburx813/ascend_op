@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for ascendc_bin_ascend310b_div_copy.
 
@@ -67,7 +67,7 @@ include op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/compiler_depend
 include op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/progress.make
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy:
-	cd /root/ascend_op/Div/build_out/op_kernel && cp /root/ascend_op/Div/build_out/op_kernel/tbe/dynamic/div.py /root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/src/Div.py
+	cd /root/ascend_op/op/Div/build_out/op_kernel && cp /root/ascend_op/op/Div/build_out/op_kernel/tbe/dynamic/div.py /root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/src/Div.py
 
 ascendc_bin_ascend310b_div_copy: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy
 ascendc_bin_ascend310b_div_copy: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build.make
@@ -78,10 +78,10 @@ op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build: ascendc_bin_asce
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/clean
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/depend
 

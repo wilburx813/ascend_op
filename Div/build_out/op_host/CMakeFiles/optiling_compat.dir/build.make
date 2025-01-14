@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for optiling_compat.
 
@@ -67,7 +67,7 @@ include op_host/CMakeFiles/optiling_compat.dir/compiler_depend.make
 include op_host/CMakeFiles/optiling_compat.dir/progress.make
 
 op_host/CMakeFiles/optiling_compat:
-	cd /root/ascend_op/Div/build_out/op_host && ln -sf lib/linux/aarch64/libcust_opmaster_rt2.0.so /root/ascend_op/Div/build_out/op_host/liboptiling.so
+	cd /root/ascend_op/op/Div/build_out/op_host && ln -sf lib/linux/aarch64/libcust_opmaster_rt2.0.so /root/ascend_op/op/Div/build_out/op_host/liboptiling.so
 
 optiling_compat: op_host/CMakeFiles/optiling_compat
 optiling_compat: op_host/CMakeFiles/optiling_compat.dir/build.make
@@ -78,10 +78,10 @@ op_host/CMakeFiles/optiling_compat.dir/build: optiling_compat
 .PHONY : op_host/CMakeFiles/optiling_compat.dir/build
 
 op_host/CMakeFiles/optiling_compat.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_host && $(CMAKE_COMMAND) -P CMakeFiles/optiling_compat.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_host && $(CMAKE_COMMAND) -P CMakeFiles/optiling_compat.dir/cmake_clean.cmake
 .PHONY : op_host/CMakeFiles/optiling_compat.dir/clean
 
 op_host/CMakeFiles/optiling_compat.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_host /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_host /root/ascend_op/Div/build_out/op_host/CMakeFiles/optiling_compat.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_host /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_host /root/ascend_op/op/Div/build_out/op_host/CMakeFiles/optiling_compat.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_host/CMakeFiles/optiling_compat.dir/depend
 

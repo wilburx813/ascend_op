@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for ascendc_bin_ascend310b.
 
@@ -67,7 +67,7 @@ include op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/compiler_depend.make
 include op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/progress.make
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b:
-	cd /root/ascend_op/Div/build_out/op_kernel && cp -r /root/ascend_op/Div/op_kernel/*.* /root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/src
+	cd /root/ascend_op/op/Div/build_out/op_kernel && cp -r /root/ascend_op/op/Div/op_kernel/*.* /root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/src
 
 ascendc_bin_ascend310b: op_kernel/CMakeFiles/ascendc_bin_ascend310b
 ascendc_bin_ascend310b: op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build.make
@@ -78,10 +78,10 @@ op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build: ascendc_bin_ascend310b
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_bin_ascend310b.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_bin_ascend310b.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/clean
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/depend
 

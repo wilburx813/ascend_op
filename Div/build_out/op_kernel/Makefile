@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /root/ascend_op/Div/build_out && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /root/ascend_op/op/Div/build_out && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /root/ascend_op/Div/build_out && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/ascend_op/Div/build_out/CPackSourceConfig.cmake
+	cd /root/ascend_op/op/Div/build_out && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/ascend_op/op/Div/build_out/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/Div/build_out/CMakeFiles /root/ascend_op/Div/build_out/op_kernel//CMakeFiles/progress.marks
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/Div/build_out/CMakeFiles 0
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/op/Div/build_out/CMakeFiles /root/ascend_op/op/Div/build_out/op_kernel//CMakeFiles/progress.marks
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ascend_op/op/Div/build_out/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/clean
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,22 +168,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/preinstall
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/preinstall
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/rule
 .PHONY : op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ ops_info_gen_ascend310b: op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/rule
 
 # fast build rule for target.
 ops_info_gen_ascend310b/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/build.make op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/build.make op_kernel/CMakeFiles/ops_info_gen_ascend310b.dir/build
 .PHONY : ops_info_gen_ascend310b/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_impl_gen.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_impl_gen.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_impl_gen.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_impl_gen.dir/rule
 
 # Convenience name for target.
@@ -206,12 +206,12 @@ ascendc_impl_gen: op_kernel/CMakeFiles/ascendc_impl_gen.dir/rule
 
 # fast build rule for target.
 ascendc_impl_gen/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_impl_gen.dir/build.make op_kernel/CMakeFiles/ascendc_impl_gen.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_impl_gen.dir/build.make op_kernel/CMakeFiles/ascendc_impl_gen.dir/build
 .PHONY : ascendc_impl_gen/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/binary.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/binary.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/binary.dir/rule
 .PHONY : op_kernel/CMakeFiles/binary.dir/rule
 
 # Convenience name for target.
@@ -220,12 +220,12 @@ binary: op_kernel/CMakeFiles/binary.dir/rule
 
 # fast build rule for target.
 binary/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/binary.dir/build.make op_kernel/CMakeFiles/binary.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/binary.dir/build.make op_kernel/CMakeFiles/binary.dir/build
 .PHONY : binary/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/rule
 
 # Convenience name for target.
@@ -234,12 +234,12 @@ ascendc_bin_ascend310b: op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/rule
 
 # fast build rule for target.
 ascendc_bin_ascend310b/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b.dir/build
 .PHONY : ascendc_bin_ascend310b/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/rule
 
 # Convenience name for target.
@@ -248,12 +248,12 @@ ascendc_bin_ascend310b_gen_ops_config: op_kernel/CMakeFiles/ascendc_bin_ascend31
 
 # fast build rule for target.
 ascendc_bin_ascend310b_gen_ops_config/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build
 .PHONY : ascendc_bin_ascend310b_gen_ops_config/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/rule
 
 # Convenience name for target.
@@ -262,12 +262,12 @@ ascendc_bin_ascend310b_div_copy: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div
 
 # fast build rule for target.
 ascendc_bin_ascend310b_div_copy/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_copy.dir/build
 .PHONY : ascendc_bin_ascend310b_div_copy/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/rule
 
 # Convenience name for target.
@@ -276,12 +276,12 @@ ascendc_bin_ascend310b_div_0: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.
 
 # fast build rule for target.
 ascendc_bin_ascend310b_div_0/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_0.dir/build
 .PHONY : ascendc_bin_ascend310b_div_0/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/rule
 
 # Convenience name for target.
@@ -290,12 +290,12 @@ ascendc_bin_ascend310b_div_1: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.
 
 # fast build rule for target.
 ascendc_bin_ascend310b_div_1/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_1.dir/build
 .PHONY : ascendc_bin_ascend310b_div_1/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/rule
 
 # Convenience name for target.
@@ -304,12 +304,12 @@ ascendc_bin_ascend310b_div_2: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.
 
 # fast build rule for target.
 ascendc_bin_ascend310b_div_2/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_2.dir/build
 .PHONY : ascendc_bin_ascend310b_div_2/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/rule
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/rule
 
 # Convenience name for target.
@@ -318,12 +318,12 @@ ascendc_bin_ascend310b_div_3: op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.
 
 # fast build rule for target.
 ascendc_bin_ascend310b_div_3/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/build.make op_kernel/CMakeFiles/ascendc_bin_ascend310b_div_3.dir/build
 .PHONY : ascendc_bin_ascend310b_div_3/fast
 
 # Convenience name for target.
 op_kernel/CMakeFiles/npu_supported_ops.dir/rule:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/npu_supported_ops.dir/rule
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 op_kernel/CMakeFiles/npu_supported_ops.dir/rule
 .PHONY : op_kernel/CMakeFiles/npu_supported_ops.dir/rule
 
 # Convenience name for target.
@@ -332,7 +332,7 @@ npu_supported_ops: op_kernel/CMakeFiles/npu_supported_ops.dir/rule
 
 # fast build rule for target.
 npu_supported_ops/fast:
-	cd /root/ascend_op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/npu_supported_ops.dir/build.make op_kernel/CMakeFiles/npu_supported_ops.dir/build
+	cd /root/ascend_op/op/Div/build_out && $(MAKE) $(MAKESILENT) -f op_kernel/CMakeFiles/npu_supported_ops.dir/build.make op_kernel/CMakeFiles/npu_supported_ops.dir/build
 .PHONY : npu_supported_ops/fast
 
 # Help Target
@@ -371,6 +371,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Include any dependencies generated for this target.
 include framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/depend.make
@@ -72,16 +72,16 @@ include framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/flags.make
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o: framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/flags.make
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o: ../framework/tf_plugin/tensorflow_div_plugin.cc
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o: framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o"
-	cd /root/ascend_op/Div/build_out/framework/tf_plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o -MF CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o.d -o CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o -c /root/ascend_op/Div/framework/tf_plugin/tensorflow_div_plugin.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o"
+	cd /root/ascend_op/op/Div/build_out/framework/tf_plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o -MF CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o.d -o CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o -c /root/ascend_op/op/Div/framework/tf_plugin/tensorflow_div_plugin.cc
 
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.i"
-	cd /root/ascend_op/Div/build_out/framework/tf_plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ascend_op/Div/framework/tf_plugin/tensorflow_div_plugin.cc > CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.i
+	cd /root/ascend_op/op/Div/build_out/framework/tf_plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ascend_op/op/Div/framework/tf_plugin/tensorflow_div_plugin.cc > CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.i
 
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.s"
-	cd /root/ascend_op/Div/build_out/framework/tf_plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ascend_op/Div/framework/tf_plugin/tensorflow_div_plugin.cc -o CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.s
+	cd /root/ascend_op/op/Div/build_out/framework/tf_plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ascend_op/op/Div/framework/tf_plugin/tensorflow_div_plugin.cc -o CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.s
 
 # Object files for target cust_tf_parsers
 cust_tf_parsers_OBJECTS = \
@@ -93,18 +93,18 @@ cust_tf_parsers_EXTERNAL_OBJECTS =
 framework/tf_plugin/libcust_tf_parsers.so: framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/tensorflow_div_plugin.cc.o
 framework/tf_plugin/libcust_tf_parsers.so: framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build.make
 framework/tf_plugin/libcust_tf_parsers.so: framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libcust_tf_parsers.so"
-	cd /root/ascend_op/Div/build_out/framework/tf_plugin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cust_tf_parsers.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libcust_tf_parsers.so"
+	cd /root/ascend_op/op/Div/build_out/framework/tf_plugin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cust_tf_parsers.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build: framework/tf_plugin/libcust_tf_parsers.so
 .PHONY : framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/build
 
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/clean:
-	cd /root/ascend_op/Div/build_out/framework/tf_plugin && $(CMAKE_COMMAND) -P CMakeFiles/cust_tf_parsers.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/framework/tf_plugin && $(CMAKE_COMMAND) -P CMakeFiles/cust_tf_parsers.dir/cmake_clean.cmake
 .PHONY : framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/clean
 
 framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/framework/tf_plugin /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/framework/tf_plugin /root/ascend_op/Div/build_out/framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/framework/tf_plugin /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/framework/tf_plugin /root/ascend_op/op/Div/build_out/framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : framework/tf_plugin/CMakeFiles/cust_tf_parsers.dir/depend
 

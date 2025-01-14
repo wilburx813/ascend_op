@@ -1,8 +1,8 @@
-# Install script for directory: /root/ascend_op/Div/framework
+# Install script for directory: /root/ascend_op/op/Div/framework
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/ascend_op/Div/build_out")
+  set(CMAKE_INSTALL_PREFIX "/root/ascend_op/op/Div/build_out")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/root/ascend_op/Div/build_out/framework/tf_plugin/cmake_install.cmake")
+  include("/root/ascend_op/op/Div/build_out/framework/tf_plugin/cmake_install.cmake")
 endif()
 

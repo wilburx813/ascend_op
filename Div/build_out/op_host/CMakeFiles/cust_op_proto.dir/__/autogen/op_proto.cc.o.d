@@ -1,7 +1,7 @@
 op_host/CMakeFiles/cust_op_proto.dir/__/autogen/op_proto.cc.o: \
- /root/ascend_op/Div/build_out/autogen/op_proto.cc \
+ /root/ascend_op/op/Div/build_out/autogen/op_proto.cc \
  /usr/include/stdc-predef.h \
- /root/ascend_op/Div/build_out/autogen/op_proto.h \
+ /root/ascend_op/op/Div/build_out/autogen/op_proto.h \
  /usr/local/Ascend/ascend-toolkit/latest/include/graph/operator_reg.h \
  /usr/include/c++/11/functional \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \

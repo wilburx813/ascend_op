@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for ascendc_bin_ascend310b_gen_ops_config.
 
@@ -67,8 +67,8 @@ include op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/compiler_
 include op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/progress.make
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config:
-	cd /root/ascend_op/Div/build_out/op_kernel && python3 /root/ascend_op/Div/cmake/util/insert_simplified_keys.py -p /root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin
-	cd /root/ascend_op/Div/build_out/op_kernel && python3 /root/ascend_op/Div/cmake/util/ascendc_ops_config.py -p /root/ascend_op/Div/build_out/op_kernel/binary/ascend310b/bin -s ascend310b
+	cd /root/ascend_op/op/Div/build_out/op_kernel && python3 /root/ascend_op/op/Div/cmake/util/insert_simplified_keys.py -p /root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin
+	cd /root/ascend_op/op/Div/build_out/op_kernel && python3 /root/ascend_op/op/Div/cmake/util/ascendc_ops_config.py -p /root/ascend_op/op/Div/build_out/op_kernel/binary/ascend310b/bin -s ascend310b
 
 ascendc_bin_ascend310b_gen_ops_config: op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config
 ascendc_bin_ascend310b_gen_ops_config: op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build.make
@@ -79,10 +79,10 @@ op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build: ascendc_bi
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/build
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/clean
 
 op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/ascendc_bin_ascend310b_gen_ops_config.dir/depend
 

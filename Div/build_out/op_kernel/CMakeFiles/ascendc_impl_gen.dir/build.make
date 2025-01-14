@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ascend_op/Div
+CMAKE_SOURCE_DIR = /root/ascend_op/op/Div
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ascend_op/Div/build_out
+CMAKE_BINARY_DIR = /root/ascend_op/op/Div/build_out
 
 # Utility rule file for ascendc_impl_gen.
 
@@ -70,11 +70,11 @@ op_kernel/CMakeFiles/ascendc_impl_gen: op_kernel/tbe/.impl_timestamp
 
 op_kernel/tbe/.impl_timestamp: autogen/aic-ascend310b-ops-info.ini
 op_kernel/tbe/.impl_timestamp: ../cmake/util/ascendc_impl_build.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tbe/.impl_timestamp"
-	cd /root/ascend_op/Div/build_out/op_kernel && mkdir -m 700 -p /root/ascend_op/Div/build_out/op_kernel/tbe/dynamic
-	cd /root/ascend_op/Div/build_out/op_kernel && python3 /root/ascend_op/Div/cmake/util/ascendc_impl_build.py /root/ascend_op/Div/build_out/autogen/aic-ascend310b-ops-info.ini "" "" /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out/op_kernel/tbe/dynamic /root/ascend_op/Div/build_out/autogen
-	cd /root/ascend_op/Div/build_out/op_kernel && rm -rf /root/ascend_op/Div/build_out/op_kernel/tbe/.impl_timestamp
-	cd /root/ascend_op/Div/build_out/op_kernel && touch /root/ascend_op/Div/build_out/op_kernel/tbe/.impl_timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ascend_op/op/Div/build_out/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tbe/.impl_timestamp"
+	cd /root/ascend_op/op/Div/build_out/op_kernel && mkdir -m 700 -p /root/ascend_op/op/Div/build_out/op_kernel/tbe/dynamic
+	cd /root/ascend_op/op/Div/build_out/op_kernel && python3 /root/ascend_op/op/Div/cmake/util/ascendc_impl_build.py /root/ascend_op/op/Div/build_out/autogen/aic-ascend310b-ops-info.ini "" "" /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/tbe/dynamic /root/ascend_op/op/Div/build_out/autogen
+	cd /root/ascend_op/op/Div/build_out/op_kernel && rm -rf /root/ascend_op/op/Div/build_out/op_kernel/tbe/.impl_timestamp
+	cd /root/ascend_op/op/Div/build_out/op_kernel && touch /root/ascend_op/op/Div/build_out/op_kernel/tbe/.impl_timestamp
 
 ascendc_impl_gen: op_kernel/CMakeFiles/ascendc_impl_gen
 ascendc_impl_gen: op_kernel/tbe/.impl_timestamp
@@ -86,10 +86,10 @@ op_kernel/CMakeFiles/ascendc_impl_gen.dir/build: ascendc_impl_gen
 .PHONY : op_kernel/CMakeFiles/ascendc_impl_gen.dir/build
 
 op_kernel/CMakeFiles/ascendc_impl_gen.dir/clean:
-	cd /root/ascend_op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_impl_gen.dir/cmake_clean.cmake
+	cd /root/ascend_op/op/Div/build_out/op_kernel && $(CMAKE_COMMAND) -P CMakeFiles/ascendc_impl_gen.dir/cmake_clean.cmake
 .PHONY : op_kernel/CMakeFiles/ascendc_impl_gen.dir/clean
 
 op_kernel/CMakeFiles/ascendc_impl_gen.dir/depend:
-	cd /root/ascend_op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/Div /root/ascend_op/Div/op_kernel /root/ascend_op/Div/build_out /root/ascend_op/Div/build_out/op_kernel /root/ascend_op/Div/build_out/op_kernel/CMakeFiles/ascendc_impl_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ascend_op/op/Div/build_out && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ascend_op/op/Div /root/ascend_op/op/Div/op_kernel /root/ascend_op/op/Div/build_out /root/ascend_op/op/Div/build_out/op_kernel /root/ascend_op/op/Div/build_out/op_kernel/CMakeFiles/ascendc_impl_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : op_kernel/CMakeFiles/ascendc_impl_gen.dir/depend
 

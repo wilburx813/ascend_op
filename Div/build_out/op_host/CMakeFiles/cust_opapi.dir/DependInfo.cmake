@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/ascend_op/Div/build_out/autogen/aclnn_div.cpp" "op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o" "gcc" "op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o.d"
+  "/root/ascend_op/op/Div/build_out/autogen/aclnn_div.cpp" "op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o" "gcc" "op_host/CMakeFiles/cust_opapi.dir/__/autogen/aclnn_div.cpp.o.d"
   )
 
 # Targets to which this target links.
