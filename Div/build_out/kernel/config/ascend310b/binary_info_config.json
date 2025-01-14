@@ -1,0 +1,77 @@
+{
+  "Div": {
+    "dynamicRankSupport": true,
+    "simplifiedKeyMode": 0,
+    "optionalInputMode": "gen_placeholder",
+    "params": {
+      "inputs": [
+        {
+          "name": "x1",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "x2",
+          "index": 1,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ]
+    },
+    "binaryList": [
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Div/d=0,p=1/3,2/3,2/3,2",
+          "Div/d=0,p=0/3,2/3,2/3,2",
+          "Div/d=1,p=1/3,2/3,2/3,2",
+          "Div/d=1,p=0/3,2/3,2/3,2"
+        ],
+        "binPath": "ascend310b/div/Div_015362a83ded881208d4721809b82d85.o",
+        "jsonPath": "ascend310b/div/Div_015362a83ded881208d4721809b82d85.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Div/d=0,p=1/2,2/2,2/2,2",
+          "Div/d=0,p=0/2,2/2,2/2,2",
+          "Div/d=1,p=1/2,2/2,2/2,2",
+          "Div/d=1,p=0/2,2/2,2/2,2"
+        ],
+        "binPath": "ascend310b/div/Div_5d675fdef4e6f912477a76a9f65a3ab0.o",
+        "jsonPath": "ascend310b/div/Div_5d675fdef4e6f912477a76a9f65a3ab0.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Div/d=0,p=1/0,2/0,2/0,2",
+          "Div/d=0,p=0/0,2/0,2/0,2",
+          "Div/d=1,p=1/0,2/0,2/0,2",
+          "Div/d=1,p=0/0,2/0,2/0,2"
+        ],
+        "binPath": "ascend310b/div/Div_bd2afc5d7db60438974dd57f515f0afb.o",
+        "jsonPath": "ascend310b/div/Div_bd2afc5d7db60438974dd57f515f0afb.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Div/d=0,p=1/1,2/1,2/1,2",
+          "Div/d=0,p=0/1,2/1,2/1,2",
+          "Div/d=1,p=1/1,2/1,2/1,2",
+          "Div/d=1,p=0/1,2/1,2/1,2"
+        ],
+        "binPath": "ascend310b/div/Div_c2ca015ab87214892dd44c128a74490b.o",
+        "jsonPath": "ascend310b/div/Div_c2ca015ab87214892dd44c128a74490b.json"
+      }
+    ]
+  }
+}

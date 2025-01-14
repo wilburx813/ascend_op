@@ -1,0 +1,89 @@
+{
+ "binFileName": "Div_bd2afc5d7db60438974dd57f515f0afb",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "VectorCore",
+ "core_type": "AIV",
+ "kernelName": "Div_bd2afc5d7db60438974dd57f515f0afb",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 24,
+ "parameters": [
+  null,
+  null,
+  null,
+  null
+ ],
+ "sha256": "9d0502bef462e5f8f20616f40b272f93642f2f19a3a1c895c48fa76444af2478",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "kernelName": "Div_bd2afc5d7db60438974dd57f515f0afb_0"
+  }
+ ],
+ "optionalInputMode": "gen_placeholder",
+ "debugOptions": "printf",
+ "debugBufSize": 78643200,
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "Div/d=0,p=1/0,2/0,2/0,2",
+   "Div/d=0,p=0/0,2/0,2/0,2",
+   "Div/d=1,p=1/0,2/0,2/0,2",
+   "Div/d=1,p=0/0,2/0,2/0,2"
+  ],
+  "staticKey": "55e84ffac41fa7325a9f15f74c4d444618458c8c02467f776f20e7d2933e345e,295935613b943d6a71aa3e5b596ee7da1f284cfde70cbf59960f8c546b5d4d30",
+  "inputs": [
+   {
+    "name": "x1",
+    "index": 0,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "x2",
+    "index": 1,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "y",
+    "index": 0,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "opMode": "dynamic",
+  "optionalInputMode": "gen_placeholder",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend310b/bin/div/Div_bd2afc5d7db60438974dd57f515f0afb.json"
+}
