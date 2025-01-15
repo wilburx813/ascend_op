@@ -1,0 +1,55 @@
+{
+  "AsinhGrad": {
+    "dynamicRankSupport": true,
+    "simplifiedKeyMode": 0,
+    "optionalInputMode": "gen_placeholder",
+    "params": {
+      "inputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "dy",
+          "index": 1,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "z",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ]
+    },
+    "binaryList": [
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "AsinhGrad/d=0,p=1/0,2/0,2/0,2",
+          "AsinhGrad/d=0,p=0/0,2/0,2/0,2",
+          "AsinhGrad/d=1,p=1/0,2/0,2/0,2",
+          "AsinhGrad/d=1,p=0/0,2/0,2/0,2"
+        ],
+        "binPath": "ascend310b/asinh_grad/AsinhGrad_69fa2011b63fa90192b70a6ace385b4b.o",
+        "jsonPath": "ascend310b/asinh_grad/AsinhGrad_69fa2011b63fa90192b70a6ace385b4b.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "AsinhGrad/d=0,p=1/1,2/1,2/1,2",
+          "AsinhGrad/d=0,p=0/1,2/1,2/1,2",
+          "AsinhGrad/d=1,p=1/1,2/1,2/1,2",
+          "AsinhGrad/d=1,p=0/1,2/1,2/1,2"
+        ],
+        "binPath": "ascend310b/asinh_grad/AsinhGrad_deef1b0a4ace535b02ab9b240cfb0867.o",
+        "jsonPath": "ascend310b/asinh_grad/AsinhGrad_deef1b0a4ace535b02ab9b240cfb0867.json"
+      }
+    ]
+  }
+}

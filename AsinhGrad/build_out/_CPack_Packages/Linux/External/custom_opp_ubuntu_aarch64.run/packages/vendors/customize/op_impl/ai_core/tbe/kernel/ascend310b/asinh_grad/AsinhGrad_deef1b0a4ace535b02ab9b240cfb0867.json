@@ -1,0 +1,87 @@
+{
+ "binFileName": "AsinhGrad_deef1b0a4ace535b02ab9b240cfb0867",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "VectorCore",
+ "core_type": "AIV",
+ "kernelName": "AsinhGrad_deef1b0a4ace535b02ab9b240cfb0867",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 16,
+ "parameters": [
+  null,
+  null,
+  null,
+  null
+ ],
+ "sha256": "4b096095fce666b8f2b356df11718e5f469a42966375d4db39519413e447abcb",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "kernelName": "AsinhGrad_deef1b0a4ace535b02ab9b240cfb0867_0"
+  }
+ ],
+ "optionalInputMode": "gen_placeholder",
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "AsinhGrad/d=0,p=1/1,2/1,2/1,2",
+   "AsinhGrad/d=0,p=0/1,2/1,2/1,2",
+   "AsinhGrad/d=1,p=1/1,2/1,2/1,2",
+   "AsinhGrad/d=1,p=0/1,2/1,2/1,2"
+  ],
+  "staticKey": "3c0dc7616702378e8e07a3b90bc9753be35e3eedd825cb55a99aa3a5eb343cce,24db4d78a3a31c0287aa11345320c199348443901fef8fe630f68f86fd5dc348",
+  "inputs": [
+   {
+    "name": "y",
+    "index": 0,
+    "dtype": "float16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "dy",
+    "index": 1,
+    "dtype": "float16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "z",
+    "index": 0,
+    "dtype": "float16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "opMode": "dynamic",
+  "optionalInputMode": "gen_placeholder",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend310b/bin/asinh_grad/AsinhGrad_deef1b0a4ace535b02ab9b240cfb0867.json"
+}
