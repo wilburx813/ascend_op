@@ -1,0 +1,49 @@
+{
+  "Asinh": {
+    "dynamicRankSupport": true,
+    "simplifiedKeyMode": 0,
+    "optionalInputMode": "gen_placeholder",
+    "params": {
+      "inputs": [
+        {
+          "name": "x",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ]
+    },
+    "binaryList": [
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Asinh/d=0,p=1/1,2/1,2",
+          "Asinh/d=0,p=0/1,2/1,2",
+          "Asinh/d=1,p=1/1,2/1,2",
+          "Asinh/d=1,p=0/1,2/1,2"
+        ],
+        "binPath": "ascend310b/asinh/Asinh_5e4658cc2e6dc559f1035b8ce9270971.o",
+        "jsonPath": "ascend310b/asinh/Asinh_5e4658cc2e6dc559f1035b8ce9270971.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Asinh/d=0,p=1/0,2/0,2",
+          "Asinh/d=0,p=0/0,2/0,2",
+          "Asinh/d=1,p=1/0,2/0,2",
+          "Asinh/d=1,p=0/0,2/0,2"
+        ],
+        "binPath": "ascend310b/asinh/Asinh_d322fd0eff305710f976a1a270410a1e.o",
+        "jsonPath": "ascend310b/asinh/Asinh_d322fd0eff305710f976a1a270410a1e.json"
+      }
+    ]
+  }
+}

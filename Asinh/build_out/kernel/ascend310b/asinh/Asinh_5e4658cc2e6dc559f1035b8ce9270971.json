@@ -1,0 +1,75 @@
+{
+ "binFileName": "Asinh_5e4658cc2e6dc559f1035b8ce9270971",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "VectorCore",
+ "core_type": "AIV",
+ "kernelName": "Asinh_5e4658cc2e6dc559f1035b8ce9270971",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 16,
+ "parameters": [
+  null,
+  null,
+  null
+ ],
+ "sha256": "8fa7c95f5a505adb19f558d090cbc0b50120f3055e165d72b42c0c8fc99515f2",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "kernelName": "Asinh_5e4658cc2e6dc559f1035b8ce9270971_0"
+  }
+ ],
+ "optionalInputMode": "gen_placeholder",
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "Asinh/d=0,p=1/1,2/1,2",
+   "Asinh/d=0,p=0/1,2/1,2",
+   "Asinh/d=1,p=1/1,2/1,2",
+   "Asinh/d=1,p=0/1,2/1,2"
+  ],
+  "staticKey": "a84e7dc2efda02122a97c46caef20dee738722bcd3e897f326f356bc1226a677,6ea53f6da880a8179848e8d27d9656470fcc75d7d663e87a5ddd49a942d586d5",
+  "inputs": [
+   {
+    "name": "x",
+    "index": 0,
+    "dtype": "float16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "y",
+    "index": 0,
+    "dtype": "float16",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "opMode": "dynamic",
+  "optionalInputMode": "gen_placeholder",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend310b/bin/asinh/Asinh_5e4658cc2e6dc559f1035b8ce9270971.json"
+}
