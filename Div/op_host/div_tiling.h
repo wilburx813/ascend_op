@@ -3,11 +3,11 @@
 
 namespace optiling {
 BEGIN_TILING_DATA_DEF(DivTilingData)
-  TILING_DATA_FIELD_DEF(uint32_t, totalLength);
+  TILING_DATA_FIELD_DEF(uint32_t, totalBlock);
   TILING_DATA_FIELD_DEF(uint32_t, tileNum);
-  TILING_DATA_FIELD_DEF(uint32_t, tileLength);
-  TILING_DATA_FIELD_DEF(uint32_t, tileLastLength);
-  TILING_DATA_FIELD_DEF(uint32_t, dataType);
+  TILING_DATA_FIELD_DEF(uint32_t, tileBlock);
+  TILING_DATA_FIELD_DEF(uint32_t, tileLastBlock);
+  // TILING_DATA_FIELD_DEF(uint32_t, dataType);
 
 END_TILING_DATA_DEF;
 
