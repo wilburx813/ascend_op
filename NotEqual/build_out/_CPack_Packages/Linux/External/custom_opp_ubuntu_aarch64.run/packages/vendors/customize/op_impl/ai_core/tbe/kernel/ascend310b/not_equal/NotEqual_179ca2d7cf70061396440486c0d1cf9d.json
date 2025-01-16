@@ -1,0 +1,87 @@
+{
+ "binFileName": "NotEqual_179ca2d7cf70061396440486c0d1cf9d",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "VectorCore",
+ "core_type": "AIV",
+ "kernelName": "NotEqual_179ca2d7cf70061396440486c0d1cf9d",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 24,
+ "parameters": [
+  null,
+  null,
+  null,
+  null
+ ],
+ "sha256": "053f62c2706263abd0b9856011ea8fb631f0240e1ecab5ba485f1c217e8508dc",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "kernelName": "NotEqual_179ca2d7cf70061396440486c0d1cf9d_0"
+  }
+ ],
+ "optionalInputMode": "gen_placeholder",
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "NotEqual/d=0,p=1/3,2/3,2/12,2",
+   "NotEqual/d=0,p=0/3,2/3,2/12,2",
+   "NotEqual/d=1,p=1/3,2/3,2/12,2",
+   "NotEqual/d=1,p=0/3,2/3,2/12,2"
+  ],
+  "staticKey": "1f8bda2aeef18906bfbf0dbe8953cbb1512624404ea0a309da01eb680d0453b0,9dc33a6ceec7529494f7494a321a800197fa6dff1eaa52ae6ac421f2c4851245",
+  "inputs": [
+   {
+    "name": "x1",
+    "index": 0,
+    "dtype": "int32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "x2",
+    "index": 1,
+    "dtype": "int32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "y",
+    "index": 0,
+    "dtype": "bool",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "opMode": "dynamic",
+  "optionalInputMode": "gen_placeholder",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend310b/bin/not_equal/NotEqual_179ca2d7cf70061396440486c0d1cf9d.json"
+}

@@ -1,0 +1,224 @@
+{
+  "binList": [
+    {
+      "implMode": "high_performance",
+      "int64Mode": false,
+      "simplifiedKeyMode": 0,
+      "simplifiedKey": [
+        "NotEqual/d=0,p=1/3,2/3,2/12,2",
+        "NotEqual/d=0,p=0/3,2/3,2/12,2",
+        "NotEqual/d=1,p=1/3,2/3,2/12,2",
+        "NotEqual/d=1,p=0/3,2/3,2/12,2"
+      ],
+      "staticKey": "1f8bda2aeef18906bfbf0dbe8953cbb1512624404ea0a309da01eb680d0453b0,9dc33a6ceec7529494f7494a321a800197fa6dff1eaa52ae6ac421f2c4851245",
+      "inputs": [
+        {
+          "name": "x1",
+          "index": 0,
+          "dtype": "int32",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        },
+        {
+          "name": "x2",
+          "index": 1,
+          "dtype": "int32",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "dtype": "bool",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "opMode": "dynamic",
+      "optionalInputMode": "gen_placeholder",
+      "deterministic": "ignore",
+      "binInfo": {
+        "jsonFilePath": "ascend310b/not_equal/NotEqual_179ca2d7cf70061396440486c0d1cf9d.json"
+      }
+    },
+    {
+      "implMode": "high_performance",
+      "int64Mode": false,
+      "simplifiedKeyMode": 0,
+      "simplifiedKey": [
+        "NotEqual/d=0,p=1/2,2/2,2/12,2",
+        "NotEqual/d=0,p=0/2,2/2,2/12,2",
+        "NotEqual/d=1,p=1/2,2/2,2/12,2",
+        "NotEqual/d=1,p=0/2,2/2,2/12,2"
+      ],
+      "staticKey": "6c329065c764aa1909f72842665c4490cb8eefc5a07efc9febde3a1665e968b3,8001baa6b9547fc9862f6e9fcb45f2b5eefda8ad94fcda11b3ddaa233080bba5",
+      "inputs": [
+        {
+          "name": "x1",
+          "index": 0,
+          "dtype": "int8",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        },
+        {
+          "name": "x2",
+          "index": 1,
+          "dtype": "int8",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "dtype": "bool",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "opMode": "dynamic",
+      "optionalInputMode": "gen_placeholder",
+      "deterministic": "ignore",
+      "binInfo": {
+        "jsonFilePath": "ascend310b/not_equal/NotEqual_7adca19b28d5d7dd386290c8abba7b34.json"
+      }
+    },
+    {
+      "implMode": "high_performance",
+      "int64Mode": false,
+      "simplifiedKeyMode": 0,
+      "simplifiedKey": [
+        "NotEqual/d=0,p=1/0,2/0,2/12,2",
+        "NotEqual/d=0,p=0/0,2/0,2/12,2",
+        "NotEqual/d=1,p=1/0,2/0,2/12,2",
+        "NotEqual/d=1,p=0/0,2/0,2/12,2"
+      ],
+      "staticKey": "faff6bc9205824fdb2dcd9ed277b9eb0bd04226f53fc9eeca43871f6a2a905d6,2f13550e83999705538acdcd56349dcbceed3b86b99ca3f662e6377ab0004aa3",
+      "inputs": [
+        {
+          "name": "x1",
+          "index": 0,
+          "dtype": "float32",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        },
+        {
+          "name": "x2",
+          "index": 1,
+          "dtype": "float32",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "dtype": "bool",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "opMode": "dynamic",
+      "optionalInputMode": "gen_placeholder",
+      "deterministic": "ignore",
+      "binInfo": {
+        "jsonFilePath": "ascend310b/not_equal/NotEqual_c003c03e17f4cfc2b70189c01332dfe1.json"
+      }
+    },
+    {
+      "implMode": "high_performance",
+      "int64Mode": false,
+      "simplifiedKeyMode": 0,
+      "simplifiedKey": [
+        "NotEqual/d=0,p=1/1,2/1,2/12,2",
+        "NotEqual/d=0,p=0/1,2/1,2/12,2",
+        "NotEqual/d=1,p=1/1,2/1,2/12,2",
+        "NotEqual/d=1,p=0/1,2/1,2/12,2"
+      ],
+      "staticKey": "28ef0c71751fdeb4876ffe020aacfbb013c6703b3cbef5a9d85e6ed034fae50f,fab9d5b9e4fa35c3391849330ae71a6f01ffa43837aeb82f1637ceb83fad0571",
+      "inputs": [
+        {
+          "name": "x1",
+          "index": 0,
+          "dtype": "float16",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        },
+        {
+          "name": "x2",
+          "index": 1,
+          "dtype": "float16",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "dtype": "bool",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "opMode": "dynamic",
+      "optionalInputMode": "gen_placeholder",
+      "deterministic": "ignore",
+      "binInfo": {
+        "jsonFilePath": "ascend310b/not_equal/NotEqual_fd4d460d6f2b7994f826c07d743c6c1e.json"
+      }
+    }
+  ]
+}

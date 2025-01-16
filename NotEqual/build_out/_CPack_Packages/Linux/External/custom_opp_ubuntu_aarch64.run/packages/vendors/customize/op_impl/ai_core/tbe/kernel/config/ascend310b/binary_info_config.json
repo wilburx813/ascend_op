@@ -1,0 +1,77 @@
+{
+  "NotEqual": {
+    "dynamicRankSupport": true,
+    "simplifiedKeyMode": 0,
+    "optionalInputMode": "gen_placeholder",
+    "params": {
+      "inputs": [
+        {
+          "name": "x1",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        },
+        {
+          "name": "x2",
+          "index": 1,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ]
+    },
+    "binaryList": [
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "NotEqual/d=0,p=1/3,2/3,2/12,2",
+          "NotEqual/d=0,p=0/3,2/3,2/12,2",
+          "NotEqual/d=1,p=1/3,2/3,2/12,2",
+          "NotEqual/d=1,p=0/3,2/3,2/12,2"
+        ],
+        "binPath": "ascend310b/not_equal/NotEqual_179ca2d7cf70061396440486c0d1cf9d.o",
+        "jsonPath": "ascend310b/not_equal/NotEqual_179ca2d7cf70061396440486c0d1cf9d.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "NotEqual/d=0,p=1/2,2/2,2/12,2",
+          "NotEqual/d=0,p=0/2,2/2,2/12,2",
+          "NotEqual/d=1,p=1/2,2/2,2/12,2",
+          "NotEqual/d=1,p=0/2,2/2,2/12,2"
+        ],
+        "binPath": "ascend310b/not_equal/NotEqual_7adca19b28d5d7dd386290c8abba7b34.o",
+        "jsonPath": "ascend310b/not_equal/NotEqual_7adca19b28d5d7dd386290c8abba7b34.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "NotEqual/d=0,p=1/0,2/0,2/12,2",
+          "NotEqual/d=0,p=0/0,2/0,2/12,2",
+          "NotEqual/d=1,p=1/0,2/0,2/12,2",
+          "NotEqual/d=1,p=0/0,2/0,2/12,2"
+        ],
+        "binPath": "ascend310b/not_equal/NotEqual_c003c03e17f4cfc2b70189c01332dfe1.o",
+        "jsonPath": "ascend310b/not_equal/NotEqual_c003c03e17f4cfc2b70189c01332dfe1.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "NotEqual/d=0,p=1/1,2/1,2/12,2",
+          "NotEqual/d=0,p=0/1,2/1,2/12,2",
+          "NotEqual/d=1,p=1/1,2/1,2/12,2",
+          "NotEqual/d=1,p=0/1,2/1,2/12,2"
+        ],
+        "binPath": "ascend310b/not_equal/NotEqual_fd4d460d6f2b7994f826c07d743c6c1e.o",
+        "jsonPath": "ascend310b/not_equal/NotEqual_fd4d460d6f2b7994f826c07d743c6c1e.json"
+      }
+    ]
+  }
+}
