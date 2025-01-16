@@ -1,0 +1,104 @@
+{
+ "binFileName": "IsClose_4b13970aa76fcc71c1b40ffb65e26536",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "VectorCore",
+ "core_type": "AIV",
+ "kernelName": "IsClose_4b13970aa76fcc71c1b40ffb65e26536",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 32,
+ "parameters": [
+  null,
+  null,
+  null,
+  null
+ ],
+ "sha256": "926101cf1106e8ffe43eb1ea1a200b8ceb8764a1cd7b9b3ef0b104ee3390b2aa",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "kernelName": "IsClose_4b13970aa76fcc71c1b40ffb65e26536_0"
+  }
+ ],
+ "optionalInputMode": "gen_placeholder",
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "IsClose/d=0,p=1/3,2/3,2/12,2",
+   "IsClose/d=0,p=0/3,2/3,2/12,2",
+   "IsClose/d=1,p=1/3,2/3,2/12,2",
+   "IsClose/d=1,p=0/3,2/3,2/12,2"
+  ],
+  "staticKey": "6df77446ff76f2172d37c6be1c13cf9659373ab5529eb06de2f0cd267f8438af,3e909874ca2c34dbcd7c83ae6aad6b0ac8c9ec8bd7dc1433abe7a7b2e1a6de61",
+  "inputs": [
+   {
+    "name": "x1",
+    "index": 0,
+    "dtype": "int32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   },
+   {
+    "name": "x2",
+    "index": 1,
+    "dtype": "int32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "y",
+    "index": 0,
+    "dtype": "bool",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "attrs": [
+   {
+    "name": "rtol",
+    "dtype": "float",
+    "value": 0.0
+   },
+   {
+    "name": "atol",
+    "dtype": "float",
+    "value": 0.0
+   },
+   {
+    "name": "equal_nan",
+    "dtype": "bool",
+    "value": false
+   }
+  ],
+  "opMode": "dynamic",
+  "optionalInputMode": "gen_placeholder",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend310b/bin/is_close/IsClose_4b13970aa76fcc71c1b40ffb65e26536.json"
+}
