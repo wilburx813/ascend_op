@@ -2,7 +2,7 @@
 
 
 constexpr int32_t BUFFER_NUM = 2; // tensor num for each queue
-const uint32_t BLOCK_SIZE = 32;
+constexpr uint32_t BLOCK_SIZE = 32;
 
 class KernelAsinh {
 public:
@@ -22,15 +22,16 @@ public:
         pipe.InitBuffer(inQueueX, BUFFER_NUM, this->tileDataNum * sizeof(DTYPE_X));
         pipe.InitBuffer(outQueueY, BUFFER_NUM, this->tileDataNum * sizeof(DTYPE_X));
         pipe.InitBuffer(tmp1, this->tileDataNum * sizeof(float)); 
-        pipe.InitBuffer(tmp2, this->tileDataNum * sizeof(float));
+        // pipe.InitBuffer(tmp2, this->tileDataNum * sizeof(float));
         pipe.InitBuffer(tmp3, this->tileDataNum * sizeof(float)); 
-        pipe.InitBuffer(tmp4, this->tileDataNum * sizeof(float));
+        // pipe.InitBuffer(tmp4, this->tileDataNum * sizeof(float));
     }
 
     __aicore__ inline void Process()
     {
         int32_t loopCount = this->tileNum;
         this->processDataNum = this->tileDataNum;
+        
         for (int32_t i = 0; i < loopCount; i++) {
             // AscendC::printf("[Process] Processing tile %d\n", i);
             if(i == loopCount - 1){
@@ -56,38 +57,51 @@ private:
         AscendC::LocalTensor<DTYPE_Y> yLocal = outQueueY.AllocTensor<DTYPE_Y>();
         if constexpr (std::is_same_v<DTYPE_X, half>){
             auto p1 = tmp1.Get<float>();
-            auto p2 = tmp2.Get<float>();
+            // auto p2 = tmp2.Get<float>();
             auto px = tmp3.Get<float>();
-            auto py = tmp4.Get<float>();
+            // auto py = tmp4.Get<float>();
             // AscendC::printf("half\n");
             Cast(px, xLocal, AscendC::RoundMode::CAST_NONE, this->processDataNum);
             // 计算 x^2
             Mul(p1, px, px, this->processDataNum);
             // 计算 x^2 + 1
-            Adds(p2, p1, static_cast<float>(1), this->processDataNum);
+            Adds(p1, p1, static_cast<float>(1.0), this->processDataNum);
             // 计算 sqrt(x^2 + 1)
-            Sqrt(p1, p2, this->processDataNum);
+            Sqrt(p1, p1, this->processDataNum);
             // 计算 x + sqrt(x^2 + 1)
-            Add(p2, px, p1, this->processDataNum);
+            Add(p1, px, p1, this->processDataNum);
             // 计算 ln(x + sqrt(x^2 + 1))
-            Ln(py, p2, this->processDataNum);
+            Ln(px, p1, this->processDataNum);
 
-            Cast(yLocal, py, AscendC::RoundMode::CAST_NONE, this->processDataNum);
+            Cast(yLocal, px, AscendC::RoundMode::CAST_NONE, this->processDataNum);
             
         }else if constexpr (std::is_same_v<DTYPE_X, float>){
             auto p1 = tmp1.Get<DTYPE_X>();
-            auto p2 = tmp2.Get<DTYPE_X>();
+            // auto p2 = tmp2.Get<DTYPE_X>();
             // AscendC::printf("float\n");
-            // 计算 x^2
-            Mul(p1, xLocal, xLocal, this->processDataNum);
-            // 计算 x^2 + 1
-            Adds(p2, p1, static_cast<DTYPE_X>(1), this->processDataNum);
-            // 计算 sqrt(x^2 + 1)
-            Sqrt(p1, p2, this->processDataNum);
-            // 计算 x + sqrt(x^2 + 1)
-            Add(p2, xLocal, p1, this->processDataNum);
-            // 计算 ln(x + sqrt(x^2 + 1))
-            Ln(yLocal, p2, this->processDataNum);
+            //负数过大会爆精度
+            float var = xLocal.GetValue(0);
+            // AscendC::printf("%f", var);
+            if(var < 0){
+                Mul(p1, xLocal, xLocal, this->processDataNum);
+                Adds(p1, p1, static_cast<DTYPE_X>(1.0), this->processDataNum);
+                Sqrt(p1, p1, this->processDataNum);
+                Sub(p1, p1, xLocal, this->processDataNum);
+                Ln(yLocal, p1, this->processDataNum);
+                Muls(yLocal, yLocal, static_cast<DTYPE_X>(-1.0), this->processDataNum);
+            }else{
+                // 计算 x^2
+                Mul(p1, xLocal, xLocal, this->processDataNum);
+                // 计算 x^2 + 1
+                Adds(p1, p1, static_cast<DTYPE_X>(1.0), this->processDataNum);
+                // 计算 sqrt(x^2 + 1)
+                Sqrt(p1, p1, this->processDataNum);
+                // 计算 x + sqrt(x^2 + 1)
+                Add(p1, xLocal, p1, this->processDataNum);
+                // 计算 ln(x + sqrt(x^2 + 1))
+                Ln(yLocal, p1, this->processDataNum);
+            }
+
         }
 
 
@@ -107,16 +121,14 @@ private:
     AscendC::TPipe pipe;
     AscendC::TQue<AscendC::QuePosition::VECIN, BUFFER_NUM> inQueueX;
     AscendC::TQue<AscendC::QuePosition::VECOUT, BUFFER_NUM> outQueueY;
-    AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp1, tmp2;
-    AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp3, tmp4;
+    AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp1;
+    AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp3;
     AscendC::GlobalTensor<DTYPE_X> xGm;
     AscendC::GlobalTensor<DTYPE_Y> yGm;
     uint32_t blockLength;
     uint32_t tileNum;
     uint32_t tileDataNum;
-
     uint32_t tileLastDataNum;
-    // uint32_t dataNum;
     uint32_t processDataNum;
 };
 
