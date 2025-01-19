@@ -7,38 +7,41 @@ public:
     __aicore__ inline KernelAsinhGrad() {}
     __aicore__ inline void Init(GM_ADDR y, GM_ADDR dy, GM_ADDR z, uint32_t totalBlock, uint32_t tileNum, uint32_t tileBlock, uint32_t tileLastBlock)
     {
-        this->blockLength = totalBlock * BLOCK_SIZE;//总长度（字节数）
+        // this->blockLength = totalBlock * BLOCK_SIZE;//总长度（字节数）
         this->tileNum = tileNum;//分割几部分
-        this->tileDataNum = tileBlock * BLOCK_SIZE / sizeof(DTYPE_Y);//每部分元素数量
-        this->tileLastDataNum = tileLastBlock * BLOCK_SIZE / sizeof(DTYPE_Y);//最后一部分元素数量
+        this->tileDataNum = tileBlock;//每部分元素数量
+        this->tileLastDataNum = tileLastBlock;//最后一部分元素数量
 
-        yGm.SetGlobalBuffer((__gm__ DTYPE_Y *)y , this->blockLength / sizeof(DTYPE_Y));
-        dyGm.SetGlobalBuffer((__gm__ DTYPE_DY *)dy , this->blockLength / sizeof(DTYPE_DY));
-        zGm.SetGlobalBuffer((__gm__ DTYPE_Z *)z , this->blockLength / sizeof(DTYPE_Z));
+        yGm.SetGlobalBuffer((__gm__ DTYPE_Y *)y , totalBlock);
+        dyGm.SetGlobalBuffer((__gm__ DTYPE_DY *)dy , totalBlock);
+        zGm.SetGlobalBuffer((__gm__ DTYPE_Z *)z , totalBlock);
 
         pipe.InitBuffer(inQueueY, BUFFER_NUM, this->tileDataNum * sizeof(DTYPE_Y));
         pipe.InitBuffer(inQueueDY, BUFFER_NUM, this->tileDataNum * sizeof(DTYPE_DY));
         pipe.InitBuffer(outQueueZ, BUFFER_NUM, this->tileDataNum * sizeof(DTYPE_Z));
-
-        pipe.InitBuffer(tmp1, this->tileDataNum * sizeof(float)); 
-        pipe.InitBuffer(tmp2, this->tileDataNum * sizeof(float));
-        pipe.InitBuffer(tmp3, this->tileDataNum * sizeof(float)); 
-        pipe.InitBuffer(tmp4, this->tileDataNum * sizeof(float));
+        if constexpr (std::is_same_v<DTYPE_Y, half>){
+            pipe.InitBuffer(tmp1, this->tileDataNum * sizeof(float)); 
+            pipe.InitBuffer(tmp2, this->tileDataNum * sizeof(float));
+        }
+        // pipe.InitBuffer(tmp3, this->tileDataNum * sizeof(float)); 
+        // pipe.InitBuffer(tmp4, this->tileDataNum * sizeof(float));
     }
 
     __aicore__ inline void Process()
     {
         int32_t loopCount = this->tileNum;
         this->processDataNum = this->tileDataNum;
-        for (int32_t i = 0; i < loopCount; i++) {
+        for (int32_t i = 0; i < loopCount - 1; i++) {
             // AscendC::printf("[Process] Processing tile %d\n", i);
-            if(i == loopCount - 1){
-                this->processDataNum = this->tileLastDataNum;
-            }
+
             CopyIn(i);
             Compute(i);
             CopyOut(i);
         }
+        this->processDataNum = this->tileLastDataNum;
+        CopyIn(loopCount - 1);
+        Compute(loopCount - 1);
+        CopyOut(loopCount - 1);
     }
 
 private:
@@ -64,13 +67,11 @@ private:
             auto p1 = tmp1.Get<float>();
             // auto p2 = tmp2.Get<float>();
             auto py = tmp2.Get<float>();
-            auto pdy = tmp3.Get<float>();
-            auto pz = tmp4.Get<float>();
+            // auto pdy = tmp3.Get<float>();
+            // auto pz = tmp4.Get<float>();
             
             // AscendC::printf("half\n");
             Cast(py, yLocal, AscendC::RoundMode::CAST_NONE, this->processDataNum);
-
-            Cast(pdy, dyLocal, AscendC::RoundMode::CAST_NONE, this->processDataNum);
 
             Exp(p1, py, this->processDataNum);
            
@@ -82,21 +83,23 @@ private:
 
             Muls(p1, p1, static_cast<float>(0.5), this->processDataNum);
 
-            Div(pz, pdy, p1, this->processDataNum);
+            Cast(py, dyLocal, AscendC::RoundMode::CAST_NONE, this->processDataNum);
 
-            Cast(zLocal, pz, AscendC::RoundMode::CAST_NONE, this->processDataNum);
+            Div(p1, py, p1, this->processDataNum);
+
+            Cast(zLocal, p1, AscendC::RoundMode::CAST_NONE, this->processDataNum);
             
         }else if constexpr (std::is_same_v<DTYPE_Y, float>){
-            auto p1 = tmp1.Get<DTYPE_Y>();
-            auto p2 = tmp2.Get<DTYPE_Y>();
+            // auto p1 = tmp1.Get<DTYPE_Y>();
+            // auto p2 = tmp2.Get<DTYPE_Y>();
 
-            Exp(p1, yLocal, this->processDataNum);
+            Exp(zLocal, yLocal, this->processDataNum);
            
             Muls(yLocal, yLocal, static_cast<DTYPE_Y>(-1), this->processDataNum);
 
             Exp(yLocal, yLocal, this->processDataNum);
 
-            Add(yLocal, yLocal, p1, this->processDataNum);
+            Add(yLocal, yLocal, zLocal, this->processDataNum);
 
             Muls(yLocal, yLocal, static_cast<DTYPE_Y>(0.5), this->processDataNum);
 
@@ -123,7 +126,7 @@ private:
     AscendC::TQue<AscendC::QuePosition::VECOUT, BUFFER_NUM> outQueueZ;
 
     AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp1, tmp2;
-    AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp3, tmp4;
+    // AscendC::TBuf<AscendC::QuePosition::VECCALC> tmp3, tmp4;
 
     AscendC::GlobalTensor<DTYPE_Y> yGm;
     AscendC::GlobalTensor<DTYPE_DY> dyGm;

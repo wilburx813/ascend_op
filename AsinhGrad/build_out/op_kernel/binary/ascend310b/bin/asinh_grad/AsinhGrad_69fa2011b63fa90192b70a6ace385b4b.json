@@ -7,14 +7,14 @@
  "kernelName": "AsinhGrad_69fa2011b63fa90192b70a6ace385b4b",
  "magic": "RT_DEV_BINARY_MAGIC_ELF",
  "memoryStamping": [],
- "opParaSize": 16,
+ "opParaSize": 24,
  "parameters": [
   null,
   null,
   null,
   null
  ],
- "sha256": "12cbdebd1b1fa8dec635050987994fb0edafad64289ea4d13dd887ab4bb3d5d7",
+ "sha256": "cd1d66d5a697efddb2741db00b054b5844fb3c85ceffa541f52e32b8d1795dd5",
  "workspace": {
   "num": 1,
   "size": [

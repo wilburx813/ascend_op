@@ -3,8 +3,8 @@
 #include "register/op_def_registry.h"
 #include "tiling/platform/platform_ascendc.h"
 
-const uint32_t BLOCK_SIZE = 32;
-const uint32_t BUFFER_NUM = 2;
+constexpr  uint32_t BLOCK_SIZE = 32;
+constexpr  uint32_t BUFFER_NUM = 2;
 
 namespace optiling {
 static ge::graphStatus TilingFunc(gert::TilingContext* context)
@@ -24,10 +24,11 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
     uint32_t alignedLength = (inputLength + BLOCK_SIZE - 1) & ~ (BLOCK_SIZE - 1);
     uint32_t totalBlock = alignedLength / BLOCK_SIZE;
 
-    uint32_t ubDataNumber =(inputBytes == 2) ? 7 : 5;
+    uint32_t ubDataNumber = (inputBytes == 2) ? 5 : 3;
+
 
     uint32_t ubBlock = (ubSize / BLOCK_SIZE / ubDataNumber) / BUFFER_NUM;
-    
+    // std::this_thread::sleep_for(std::chrono::seconds(20));
 
     uint32_t tileNum = totalBlock / ubBlock;
     uint32_t tileBlock = tileNum == 0 ? totalBlock : ubBlock;
@@ -38,10 +39,10 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
         tileNum++;
     }
     
-    tiling.set_totalBlock(totalBlock);
+    tiling.set_totalBlock(totalBlock * 32 / inputBytes);
     tiling.set_tileNum(tileNum);
-    tiling.set_tileLastBlock(tileLastBlock);
-    tiling.set_tileBlock(tileBlock);
+    tiling.set_tileLastBlock(tileLastBlock * 32 / inputBytes);
+    tiling.set_tileBlock(tileBlock * 32 / inputBytes);
 
     // 设置块维度
     context->SetBlockDim(1);
