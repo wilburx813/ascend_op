@@ -1,0 +1,41 @@
+{
+  "op_type": "Softmax",
+  "op_list": [
+    {
+      "bin_filename": "Softmax_1db4c96891f06dcf5653d945eefbe2da",
+      "inputs": [
+        {
+          "name": "x",
+          "index": 0,
+          "dtype": "float32",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "dtype": "float32",
+          "format": "ND",
+          "paramType": "required",
+          "shape": [
+            -2
+          ],
+          "format_match_mode": "FormatAgnostic"
+        }
+      ],
+      "attrs": [
+        {
+          "name": "dim",
+          "dtype": "int",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

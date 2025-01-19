@@ -1,0 +1,82 @@
+{
+ "binFileName": "Softmax_1db4c96891f06dcf5653d945eefbe2da",
+ "binFileSuffix": ".o",
+ "blockDim": -1,
+ "coreType": "VectorCore",
+ "core_type": "AIV",
+ "kernelName": "Softmax_1db4c96891f06dcf5653d945eefbe2da",
+ "magic": "RT_DEV_BINARY_MAGIC_ELF",
+ "memoryStamping": [],
+ "opParaSize": 32,
+ "parameters": [
+  null,
+  null,
+  null
+ ],
+ "sha256": "1e8b55f6a6a85aff48d9505ec22c94728652bef9ea398ed80ff77d865aa7d652",
+ "workspace": {
+  "num": 1,
+  "size": [
+   -1
+  ],
+  "type": [
+   0
+  ]
+ },
+ "kernelList": [
+  {
+   "kernelName": "Softmax_1db4c96891f06dcf5653d945eefbe2da_0"
+  }
+ ],
+ "optionalInputMode": "gen_placeholder",
+ "compileInfo": {},
+ "supportInfo": {
+  "implMode": "high_performance",
+  "int64Mode": false,
+  "simplifiedKeyMode": 0,
+  "simplifiedKey": [
+   "Softmax/d=0,p=1/0,2/0,2",
+   "Softmax/d=0,p=0/0,2/0,2",
+   "Softmax/d=1,p=1/0,2/0,2",
+   "Softmax/d=1,p=0/0,2/0,2"
+  ],
+  "staticKey": "e85f3d6de45f3f51767150c663e93bb737cee4861e7a7308cb7a5c35e8661856,51ba57c03ce11fb35ec35fa1c2c08884472c02c7113f07173847b4a90b1240b6",
+  "inputs": [
+   {
+    "name": "x",
+    "index": 0,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "y",
+    "index": 0,
+    "dtype": "float32",
+    "format": "ND",
+    "paramType": "required",
+    "shape": [
+     -2
+    ],
+    "format_match_mode": "FormatAgnostic"
+   }
+  ],
+  "attrs": [
+   {
+    "name": "dim",
+    "dtype": "int",
+    "value": 0
+   }
+  ],
+  "opMode": "dynamic",
+  "optionalInputMode": "gen_placeholder",
+  "deterministic": "ignore"
+ },
+ "filePath": "ascend310b/bin/softmax/Softmax_1db4c96891f06dcf5653d945eefbe2da.json"
+}

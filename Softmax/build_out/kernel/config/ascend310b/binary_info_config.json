@@ -1,0 +1,54 @@
+{
+  "Softmax": {
+    "dynamicRankSupport": true,
+    "simplifiedKeyMode": 0,
+    "optionalInputMode": "gen_placeholder",
+    "params": {
+      "inputs": [
+        {
+          "name": "x",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "index": 0,
+          "paramType": "required",
+          "formatMode": "static_nd_agnostic"
+        }
+      ],
+      "attrs": [
+        {
+          "name": "dim"
+        }
+      ]
+    },
+    "binaryList": [
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Softmax/d=0,p=1/0,2/0,2",
+          "Softmax/d=0,p=0/0,2/0,2",
+          "Softmax/d=1,p=1/0,2/0,2",
+          "Softmax/d=1,p=0/0,2/0,2"
+        ],
+        "binPath": "ascend310b/softmax/Softmax_1db4c96891f06dcf5653d945eefbe2da.o",
+        "jsonPath": "ascend310b/softmax/Softmax_1db4c96891f06dcf5653d945eefbe2da.json"
+      },
+      {
+        "coreType": 2,
+        "simplifiedKey": [
+          "Softmax/d=0,p=1/1,2/1,2",
+          "Softmax/d=0,p=0/1,2/1,2",
+          "Softmax/d=1,p=1/1,2/1,2",
+          "Softmax/d=1,p=0/1,2/1,2"
+        ],
+        "binPath": "ascend310b/softmax/Softmax_bbe72f868f7ad334a45443aa833ea54d.o",
+        "jsonPath": "ascend310b/softmax/Softmax_bbe72f868f7ad334a45443aa833ea54d.json"
+      }
+    ]
+  }
+}
