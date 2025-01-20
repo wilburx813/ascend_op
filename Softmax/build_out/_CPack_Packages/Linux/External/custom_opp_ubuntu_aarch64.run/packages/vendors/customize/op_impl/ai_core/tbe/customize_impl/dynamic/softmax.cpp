@@ -26,7 +26,7 @@ public:
         pipe.InitBuffer(outQueueY, BUFFER_NUM, this->tileSize * sizeof(DTYPE_X));
 
 
-        pipe.InitBuffer(tmp1, 1 * sizeof(DTYPE_X)); //用于存储Reduce sum result
+        pipe.InitBuffer(tmp1, 1 * sizeof(float)); //用于存储Reduce sum result
         pipe.InitBuffer(tmp2, this->tileSize * sizeof(float)); 
         pipe.InitBuffer(tmp3, this->tileSize * sizeof(float)); 
         pipe.InitBuffer(tmp4, this->tileSize * sizeof(float)); 
@@ -64,6 +64,7 @@ public:
 private:
     __aicore__ inline void CopyIn(int32_t i, int32_t j)
     {
+
         AscendC::LocalTensor<DTYPE_X> xLocal = inQueueX.AllocTensor<DTYPE_X>();
         AscendC::DataCopy(xLocal, xGm[i * this->dimSize + j * this->tileSize], (this->processDataNum+31)/32*32);// TODO:目前默认dim = -1
         inQueueX.EnQue(xLocal);
@@ -71,7 +72,7 @@ private:
 
     __aicore__ inline void Compute_sum(int32_t i, int32_t j)
     {
-        // if(std::is_same_v<DTYPE_X, float>){
+        if(std::is_same_v<DTYPE_X, float>){
             AscendC::LocalTensor<DTYPE_X> xLocal = inQueueX.DeQue<DTYPE_X>();
             auto p1 = tmp1.Get<DTYPE_X>();
             if(j == 0){
@@ -85,7 +86,23 @@ private:
             this->sum += var;
 
             inQueueX.FreeTensor(xLocal);
-        // }
+        }else{
+            AscendC::LocalTensor<DTYPE_X> xLocal = inQueueX.DeQue<DTYPE_X>();
+            auto p1 = tmp1.Get<float>();
+            auto p2 = tmp2.Get<float>();
+            if(j == 0){
+                this->sum = 0;
+            }
+
+            Cast(p2,xLocal,AscendC::RoundMode::CAST_NONE,this->processDataNum);
+            Exp(p2,p2,this->processDataNum);
+            ReduceSum(p1, p2, p2, this->processDataNum);
+            float var = p1.GetValue(0);
+
+            this->sum += var;
+
+            inQueueX.FreeTensor(xLocal);
+        }
         // else{
         //     AscendC::LocalTensor<DTYPE_X> xLocal = inQueueX.DeQue<DTYPE_X>();
         //     auto temp1 = tmp1.Get<float>();
