@@ -4,18 +4,23 @@ using namespace AscendC;
 constexpr int32_t BUFFER_NUM = 2; // tensor num for each queue
 constexpr uint32_t BLOCK_SIZE = 256;
 
-class KernelAsinh {
+class KernelNotEqual {
 public:
-    __aicore__ inline KernelAsinh() {}
+    __aicore__ inline KernelNotEqual() {}
     __aicore__ inline void Init(GM_ADDR x1, GM_ADDR x2, GM_ADDR y, uint32_t totalBlock, uint32_t tileNum, uint32_t tileBlock, uint32_t tileLastBlock,uint32_t typekey)
     {
         this->blockLength = totalBlock * BLOCK_SIZE;//总长度（字节数）
         this->tileNum = tileNum;//分割几部分
-        this->tileDataNum = tileBlock * BLOCK_SIZE / sizeof(DTYPE_X1);//每部分元素数量
-        this->tileLastDataNum = tileLastBlock * BLOCK_SIZE / sizeof(DTYPE_X1);//最后一部分元素数量
+        this->tileDataNum = tileBlock;//每部分元素数量
+        this->tileLastDataNum = tileLastBlock;//最后一部分元素数量
         this->typekey = typekey;
         // this->dataNum = dataNum;
         // 假设 DTYPE_X1 是你定义的数据类型
+        printf("blockLength: %u\n", this->blockLength);
+        printf("tileNum: %u\n", this->tileNum);
+        printf("tileDataNum: %u\n", this->tileDataNum);
+        printf("tileLastDataNum: %u\n", this->tileLastDataNum);
+        printf("typekey: %u\n", this->typekey);
 
         x1Gm.SetGlobalBuffer((__gm__ DTYPE_X1 *)x1 , this->blockLength / sizeof(DTYPE_X1));
         x2Gm.SetGlobalBuffer((__gm__ DTYPE_X2 *)x2 , this->blockLength / sizeof(DTYPE_X1));
@@ -40,12 +45,15 @@ public:
             // AscendC::printf("[Process] Processing tile %d\n", i);
             if(i == loopCount - 1){
                 this->processDataNum = this->tileLastDataNum;
+                // this->processDataNum = 160;
             }
             CopyIn(i);
             Compute(i);
             CopyOut(i);
         }
+
     }
+    
 
 private:
     __aicore__ inline void CopyIn(int32_t progress)
@@ -61,23 +69,29 @@ private:
     __aicore__ inline void Compute(int32_t progress)
     {
 
-
         if(this->typekey == 2){//int8
-            //half
             AscendC::LocalTensor<int8_t> x1Local = inQueueX1.DeQue<int8_t>();
             AscendC::LocalTensor<int8_t> x2Local = inQueueX2.DeQue<int8_t>();
             AscendC::LocalTensor<uint8_t> yLocal = outQueueY.AllocTensor<uint8_t>();
-            AscendC::LocalTensor<half> p1 = tmp1.Get<half>();
-            AscendC::LocalTensor<half> px1 = tmp2.Get<half>();
-            AscendC::LocalTensor<half> px2 = tmp3.Get<half>();
+            // AscendC::LocalTensor<half> p1 = tmp1.Get<half>();
+            // AscendC::LocalTensor<half> px1 = tmp2.Get<half>();
+            // AscendC::LocalTensor<half> px2 = tmp3.Get<half>();
+            // Cast(px1, x1Local, RoundMode::CAST_NONE, this->processDataNum);
+            // Cast(px2, x2Local, RoundMode::CAST_NONE, this->processDataNum);
 
-            Cast(px1, x1Local, RoundMode::CAST_NONE, this->processDataNum);
-            Cast(px2, x2Local, RoundMode::CAST_NONE, this->processDataNum);
+            // Duplicate<half>(p1, (half)1.0, this->processDataNum);
+            // Compare(yLocal, px1, px2, AscendC::CMPMODE::NE, this->processDataNum);//好像要256字节对齐
+            // Select(p1, yLocal, p1, static_cast<half>(0), AscendC::SELMODE::VSEL_TENSOR_SCALAR_MODE, this->processDataNum);
+            // Cast(yLocal, p1, AscendC::RoundMode::CAST_NONE, this->processDataNum);
 
-            Duplicate<half>(p1, (half)1.0, this->processDataNum);
-            Compare(yLocal, px1, px2, AscendC::CMPMODE::NE, this->processDataNum);//好像要256字节对齐
-            Select(p1, yLocal, p1, static_cast<half>(0), AscendC::SELMODE::VSEL_TENSOR_SCALAR_MODE, this->processDataNum);
-            Cast(yLocal, p1, AscendC::RoundMode::CAST_NONE, this->processDataNum);
+            for(int i = 0;i < this->processDataNum;i++){
+                if(x1Local.GetValue(i) != x2Local.GetValue(i)){
+                    yLocal.SetValue(i,static_cast<uint8_t>(1));
+                }else{
+                    yLocal.SetValue(i,static_cast<uint8_t>(0));
+                }
+            }
+
             outQueueY.EnQue<uint8_t>(yLocal);
             inQueueX1.FreeTensor(x1Local);
             inQueueX2.FreeTensor(x2Local);
@@ -162,7 +176,9 @@ private:
 
 extern "C" __global__ __aicore__ void not_equal(GM_ADDR x1, GM_ADDR x2, GM_ADDR y, GM_ADDR workspace, GM_ADDR tiling) {
     GET_TILING_DATA(tiling_data, tiling);
-    KernelAsinh op;
+    KernelNotEqual op;
     op.Init(x1, x2, y, tiling_data.totalBlock, tiling_data.tileNum, tiling_data.tileBlock, tiling_data.tileLastBlock,tiling_data.typekey);
     op.Process();
+  
+
 }

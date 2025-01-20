@@ -7,6 +7,7 @@ constexpr int32_t BUFFER_NUM = 2; // tensor num for each queue
 constexpr uint32_t BLOCK_SIZE = 256;
 
 
+
 namespace optiling {
 static ge::graphStatus TilingFunc(gert::TilingContext* context)
 {
@@ -23,29 +24,98 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
     uint32_t alignedLength = (inputLength + BLOCK_SIZE - 1) & ~ (BLOCK_SIZE - 1);
     uint32_t totalBlock = alignedLength / BLOCK_SIZE;
 
-    uint32_t ubDataNumber = 6;
+    
     // uint32_t ubDataNumber = (inputBytes == 2) ? 6 : 4;
-    uint32_t ubBlock = (ubSize / BLOCK_SIZE / ubDataNumber) / BUFFER_NUM;
+   if(inputBytes == 1){
+        uint32_t ubDataNumber = 4;
+        uint32_t ubBlock = (ubSize / 32 / ubDataNumber) / BUFFER_NUM;
+        totalBlock = ((inputNum + 31) & ~ (31)) / 32;
+
+        uint32_t tileNum = totalBlock / ubBlock;
+
+        uint32_t tileBlock = tileNum == 0 ? totalBlock : ubBlock;
+        uint32_t tileLastBlock = tileBlock;
+        
+        if((totalBlock % ubBlock) != 0){
+            tileLastBlock = totalBlock - tileBlock * tileNum;
+            tileNum++;
+        }
+        
+        auto type = context->GetInputDesc(0)->GetDataType();
+        // std::cout << "type:" << type << std::endl;
+        tiling.set_totalBlock(totalBlock);
+        tiling.set_tileNum(tileNum);
+        tiling.set_tileLastBlock(tileLastBlock * 32);
+        tiling.set_tileBlock(tileBlock * 32);
+        tiling.set_typekey(type);
+        // context->SetTilingKey(2);
+        std::cout << "UB Size: " << ubSize << std::endl;
+        std::cout << "Input Num: " << inputNum << std::endl;
+        std::cout << "Input Bytes: " << inputBytes << std::endl;
+        std::cout << "Input Length: " << inputLength << std::endl;
+        std::cout << "Aligned Length: " << alignedLength << std::endl;
+        std::cout << "Total Block: " << totalBlock << std::endl;
+        std::cout << "Tile Num: " << tileNum << std::endl;
+        std::cout << "Tile Block: " << tileBlock << std::endl;
+        std::cout << "Tile Last Block: " << tileLastBlock << std::endl;
+        std::cout << "Data Type: " << type << std::endl;
+   }else{
+        uint32_t ubDataNumber = 6;
+        uint32_t ubBlock = (ubSize / BLOCK_SIZE / ubDataNumber) / BUFFER_NUM;
+            
+
+        uint32_t tileNum = totalBlock / ubBlock;
+        uint32_t tileBlock = tileNum == 0 ? totalBlock : ubBlock;
+        uint32_t tileLastBlock = tileBlock;
+        
+        if((totalBlock % ubBlock) != 0){
+            tileLastBlock = totalBlock - tileBlock * tileNum;
+            tileNum++;
+        }
+        
+        auto type = context->GetInputDesc(0)->GetDataType();
+        // std::cout << "type:" << type << std::endl;
+        tiling.set_totalBlock(totalBlock);
+        tiling.set_tileNum(tileNum);
+        tiling.set_tileLastBlock(tileLastBlock * BLOCK_SIZE / inputBytes);
+        tiling.set_tileBlock(tileBlock * BLOCK_SIZE / inputBytes);
+        tiling.set_typekey(type);
+        // context->SetTilingKey(1);
+        std::cout << "UB Size: " << ubSize << std::endl;
+    std::cout << "Input Num: " << inputNum << std::endl;
+    std::cout << "Input Bytes: " << inputBytes << std::endl;
+    std::cout << "Input Length: " << inputLength << std::endl;
+    std::cout << "Aligned Length: " << alignedLength << std::endl;
+    std::cout << "Total Block: " << totalBlock << std::endl;
+    std::cout << "Tile Num: " << tileNum << std::endl;
+    std::cout << "Tile Block: " << tileBlock << std::endl;
+    std::cout << "Tile Last Block: " << tileLastBlock << std::endl;
+    std::cout << "Data Type: " << type << std::endl;
+   }
+    // uint32_t ubDataNumber = 6;
+    // uint32_t ubBlock = (ubSize / BLOCK_SIZE / ubDataNumber) / BUFFER_NUM;
+        
+
+    // uint32_t tileNum = totalBlock / ubBlock;
+    // uint32_t tileBlock = tileNum == 0 ? totalBlock : ubBlock;
+    // uint32_t tileLastBlock = tileBlock;
+    
+    // if((totalBlock % ubBlock) != 0){
+    //     tileLastBlock = totalBlock - tileBlock * tileNum;
+    //     tileNum++;
+    // }
+    
+    // auto type = context->GetInputDesc(0)->GetDataType();
+    // // std::cout << "type:" << type << std::endl;
+    // tiling.set_totalBlock(totalBlock);
+    // tiling.set_tileNum(tileNum);
+    // tiling.set_tileLastBlock(tileLastBlock * BLOCK_SIZE / inputBytes);
+    // tiling.set_tileBlock(tileBlock * BLOCK_SIZE / inputBytes);
+    // tiling.set_typekey(type);
+    
     
 
-    uint32_t tileNum = totalBlock / ubBlock;
-    uint32_t tileBlock = tileNum == 0 ? totalBlock : ubBlock;
-    uint32_t tileLastBlock = tileBlock;
     
-    if((totalBlock % ubBlock) != 0){
-        tileLastBlock = totalBlock - tileBlock * tileNum;
-        tileNum++;
-    }
-    
-    auto type = context->GetInputDesc(0)->GetDataType();
-    std::cout << "type:" << type << std::endl;
-    tiling.set_totalBlock(totalBlock);
-    tiling.set_tileNum(tileNum);
-    tiling.set_tileLastBlock(tileLastBlock);
-    tiling.set_tileBlock(tileBlock);
-    tiling.set_typekey(type);
-
-
     // 设置块维度
     context->SetBlockDim(1);
 
